@@ -1,21 +1,29 @@
 <!DOCTYPE html>
-<html ng-app>
+<html>
 <head>
-<title>Simple app</title>
-<script
-src="F:\MyProjects\study\TestAngularJS\angular.js\angular.min.js">
+<title>HelloWorld</title>
+<script src="F:\MyProjects\study\TestAngularJS\angular.js\angular.js">
+</script>
+<script type="text/javascript">
+angular.module('app', []);
+angular.module('app').config(['$controllerProvider', function($controllerProvider) {
+  $controllerProvider.allowGlobals();
+}]);
+
+function MessageController($scope,$timeout) {
+	var updateClock = function() {
+		$scope.message = new Date();
+		$timeout(function() {
+			updateClock();
+		}, 1000);
+	};
+	updateClock();
+}
 </script>
 </head>
-<body>
-<div>
-	<label for="uid">Your UID</label>
-	<input id="uid" ng-model="user.uid" type="text" placeholder="Your UID">
-</div>
-<div>
-	<label for="password">Your password</label>
-	<input id="password" ng-model="user.password" type="password" placeholder="password">
-</div>
-<h1>your UID: {{ user.uid }}</h1>
-<h1>your password: {{ user.password }}</h1>
+<body ng-app="app">
+<p ng-controller="MessageController as controller">
+{{message}}
+</p>
 </body>
 </html>
