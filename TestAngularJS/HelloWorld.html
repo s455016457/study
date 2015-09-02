@@ -4,26 +4,61 @@
 <title>HelloWorld</title>
 <script src="F:\MyProjects\study\TestAngularJS\angular.js\angular.js">
 </script>
+</head>
+<body ng-app="myApp">
+<div>
+<label for="UID">UserName:</label>
+<input type="text" id="UID" ng-model="user.UID" placeholder="UserName"/>
+</div>
+<div>
+<label for="PWD">Password:</label>
+<input type="Password" id="PWD" ng-model="user.PWD" placeholder="Password"/>
+</div>
+<hr/>
+<div>
+Your Username is:{{user.UID}}
+</div>
+<div>
+Your Password is:{{user.PWD}}
+</div>
+<hr/>
+<p ng-controller="MessageController as controller">
+{{message.now}}
+</p>
 <script type="text/javascript">
-angular.module('app', []);
-angular.module('app').config(['$controllerProvider', function($controllerProvider) {
+/*
+AngularJS允许我们使用angular.module()方法来声明/引用模块
+这个方法接受两个参数时，创建模块，第一个是模块的名称，第二个是依赖列表，也就是可以被注入到模块中的对象列表。
+接受一个参数时，引用模块，参数为模块名称
+*/
+//定义了一个叫myApp的模块，不依赖任何对象
+angular.module('myApp', []);
+//引用myApp模块
+var myApp=angular.module('myApp');
+
+//在myApp模块中创建controller
+myApp.config(['$controllerProvider', function($controllerProvider) {
   $controllerProvider.allowGlobals();
 }]);
 
 function MessageController($scope,$timeout) {
-	var updateClock = function() {
-		$scope.message = new Date();
-		$timeout(function() {
-			updateClock();
-		}, 1000);
+	//初始化message对象
+	$scope.message = {
+		now: new Date()
 	};
-	updateClock();
+	var updateClock = function() {
+		$scope.message.now = new Date();
+	};
+	/*
+	$timeout(function() {
+		updateClock();
+	}, 1000);
+	**/
+	//$scope.$apply的用法是什么，这里和$timeout方法有什么区别？
+	setInterval(function() {
+		$scope.$apply(updateClock);
+	}, 1000);
 }
 </script>
-</head>
-<body ng-app="app">
-<p ng-controller="MessageController as controller">
-{{message}}
-</p>
 </body>
 </html>
