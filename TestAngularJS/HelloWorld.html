@@ -23,7 +23,7 @@ Your Password is:{{user.PWD}}
 </div>
 <hr/>
 <p ng-controller="MessageController as controller">
-{{message.now}}
+{{message.now|date:'yyyy-MM-dd HH:mm:ss'}}
 </p>
 <script type="text/javascript">
 /*
