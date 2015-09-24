@@ -4,15 +4,15 @@
     <title>表单验证</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <link href="F:\MyProjects\study\easyUi\jquery-easyui-1.4.3\themes\icon.css" rel="stylesheet" />
-    <link href="F:\MyProjects\study\easyUi\jquery-easyui-1.4.3\themes\default\easyui.css" rel="stylesheet" />
-    <script src="F:\MyProjects\study\easyUi\jquery-easyui-1.4.3\jquery.min.js"></script>
-    <script src="F:\MyProjects\study\easyUi\jquery-easyui-1.4.3\jquery.easyui.min.js"></script>
-    <script src="F:\MyProjects\study\easyUi\jquery-easyui-1.4.3\locale\easyui-lang-zh_CN.js"></script>
+    <link href=".\jquery-easyui-1.4.3\themes\icon.css" rel="stylesheet" />
+    <link href=".\jquery-easyui-1.4.3\themes\default\easyui.css" rel="stylesheet" />
+    <script src=".\jquery-easyui-1.4.3\jquery.min.js"></script>
+    <script src=".\jquery-easyui-1.4.3\jquery.easyui.min.js"></script>
+    <script src=".\jquery-easyui-1.4.3\locale\easyui-lang-zh_CN.js"></script>
     <script type="text/javascript">
         ///js智能提示
-        /// <reference path=""F:\MyProjects\study\easyUi\jquery-easyui-1.4.3\jquery.min.js"/>
-        /// <reference path="F:\MyProjects\study\easyUi\jquery-easyui-1.4.3\jquery.easyui.min.js"/>
+        /// <reference path="".\jquery-easyui-1.4.3\jquery.min.js"/>
+        /// <reference path=".\jquery-easyui-1.4.3\jquery.easyui.min.js"/>
 
     </script>
 
@@ -34,7 +34,7 @@
 			<tr>
 				<th data-options="field:'itemid',width:80">Item ID</th>
 				<th data-options="field:'productid',width:100,editor:'text'">Product</th>
-				<th data-options="field:'listprice',width:80,align:'right',editor:{type:'numberbox',options:{precision:1}}">List Price</th>
+				<th data-options="field:'listprice',width:80,align:'right',formatter:format,editor:{type:'numberbox',options:{precision:1}}">List Price</th>
 				<th data-options="field:'unitcost',width:80,align:'right',editor:'numberbox'">Unit Cost</th>
 				<th data-options="field:'attr1',width:250,editor:'text'">Attribute</th>
 				<th data-options="field:'status',width:60,align:'center',editor:{type:'checkbox',options:{on:'P',off:''}}">Status</th>
@@ -80,6 +80,12 @@
 	            $('#dg').datagrid('selectRow', index)
 						.datagrid('editCell', { index: index, field: field });
 	            editIndex = index;
+	        }
+	    }
+
+	    function format(val, row) {
+	        if (val && val != 0) {
+	            return "<span>" + val + "%</span>";
 	        }
 	    }
 	</script>
