@@ -1,0 +1,14 @@
+H:\MyProjects\study\EntityFramework\Test\bin\Debug\Test.exe.config
+H:\MyProjects\study\EntityFramework\Test\bin\Debug\Test.exe
+H:\MyProjects\study\EntityFramework\Test\bin\Debug\Test.pdb
+H:\MyProjects\study\EntityFramework\Test\bin\Debug\StudyEntityFramework.dll
+H:\MyProjects\study\EntityFramework\Test\bin\Debug\EntityFramework.dll
+H:\MyProjects\study\EntityFramework\Test\bin\Debug\StudyEntityFramework.pdb
+H:\MyProjects\study\EntityFramework\Test\bin\Debug\EntityFramework.xml
+H:\MyProjects\study\EntityFramework\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
+H:\MyProjects\study\EntityFramework\Test\obj\Debug\Test.exe
+H:\MyProjects\study\EntityFramework\Test\obj\Debug\Test.pdb
+H:\MyProjects\study\EntityFramework\Test\bin\Debug\zh-Hans\EntityFramework.resources.dll
+H:\MyProjects\study\EntityFramework\Test\bin\Debug\EntityFramework.SqlServer.dll
+H:\MyProjects\study\EntityFramework\Test\bin\Debug\EntityFramework.SqlServer.xml
+H:\MyProjects\study\EntityFramework\Test\bin\Debug\zh-Hans\EntityFramework.SqlServer.resources.dll

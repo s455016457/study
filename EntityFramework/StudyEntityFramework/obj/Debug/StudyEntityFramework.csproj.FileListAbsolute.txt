@@ -1,0 +1,11 @@
+H:\MyProjects\study\EntityFramework\StudyEntityFramework\bin\Debug\StudyEntityFramework.dll.config
+H:\MyProjects\study\EntityFramework\StudyEntityFramework\bin\Debug\StudyEntityFramework.dll
+H:\MyProjects\study\EntityFramework\StudyEntityFramework\bin\Debug\StudyEntityFramework.pdb
+H:\MyProjects\study\EntityFramework\StudyEntityFramework\bin\Debug\EntityFramework.dll
+H:\MyProjects\study\EntityFramework\StudyEntityFramework\bin\Debug\EntityFramework.SqlServer.dll
+H:\MyProjects\study\EntityFramework\StudyEntityFramework\bin\Debug\EntityFramework.xml
+H:\MyProjects\study\EntityFramework\StudyEntityFramework\bin\Debug\EntityFramework.SqlServer.xml
+H:\MyProjects\study\EntityFramework\StudyEntityFramework\bin\Debug\zh-Hans\EntityFramework.resources.dll
+H:\MyProjects\study\EntityFramework\StudyEntityFramework\bin\Debug\zh-Hans\EntityFramework.SqlServer.resources.dll
+H:\MyProjects\study\EntityFramework\StudyEntityFramework\obj\Debug\StudyEntityFramework.dll
+H:\MyProjects\study\EntityFramework\StudyEntityFramework\obj\Debug\StudyEntityFramework.pdb

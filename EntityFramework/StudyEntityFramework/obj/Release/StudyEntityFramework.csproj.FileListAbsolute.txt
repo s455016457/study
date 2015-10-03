@@ -1,0 +1,12 @@
+H:\MyProjects\study\EntityFramework\StudyEntityFramework\bin\Release\StudyEntityFramework.dll.config
+H:\MyProjects\study\EntityFramework\StudyEntityFramework\bin\Release\StudyEntityFramework.dll
+H:\MyProjects\study\EntityFramework\StudyEntityFramework\bin\Release\StudyEntityFramework.pdb
+H:\MyProjects\study\EntityFramework\StudyEntityFramework\bin\Release\EntityFramework.dll
+H:\MyProjects\study\EntityFramework\StudyEntityFramework\bin\Release\EntityFramework.SqlServer.dll
+H:\MyProjects\study\EntityFramework\StudyEntityFramework\bin\Release\EntityFramework.xml
+H:\MyProjects\study\EntityFramework\StudyEntityFramework\bin\Release\EntityFramework.SqlServer.xml
+H:\MyProjects\study\EntityFramework\StudyEntityFramework\bin\Release\zh-Hans\EntityFramework.resources.dll
+H:\MyProjects\study\EntityFramework\StudyEntityFramework\bin\Release\zh-Hans\EntityFramework.SqlServer.resources.dll
+H:\MyProjects\study\EntityFramework\StudyEntityFramework\obj\Release\StudyEntityFramework.dll
+H:\MyProjects\study\EntityFramework\StudyEntityFramework\obj\Release\StudyEntityFramework.pdb
+H:\MyProjects\study\EntityFramework\StudyEntityFramework\obj\Release\StudyEntityFramework.csprojResolveAssemblyReference.cache

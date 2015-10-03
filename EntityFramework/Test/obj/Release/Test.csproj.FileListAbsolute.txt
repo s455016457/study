@@ -1,0 +1,11 @@
+H:\MyProjects\study\EntityFramework\Test\bin\Release\Test.exe.config
+H:\MyProjects\study\EntityFramework\Test\bin\Release\Test.exe
+H:\MyProjects\study\EntityFramework\Test\bin\Release\Test.pdb
+H:\MyProjects\study\EntityFramework\Test\bin\Release\StudyEntityFramework.dll
+H:\MyProjects\study\EntityFramework\Test\bin\Release\EntityFramework.dll
+H:\MyProjects\study\EntityFramework\Test\bin\Release\StudyEntityFramework.pdb
+H:\MyProjects\study\EntityFramework\Test\bin\Release\EntityFramework.xml
+H:\MyProjects\study\EntityFramework\Test\bin\Release\zh-Hans\EntityFramework.resources.dll
+H:\MyProjects\study\EntityFramework\Test\obj\Release\Test.csprojResolveAssemblyReference.cache
+H:\MyProjects\study\EntityFramework\Test\obj\Release\Test.exe
+H:\MyProjects\study\EntityFramework\Test\obj\Release\Test.pdb
