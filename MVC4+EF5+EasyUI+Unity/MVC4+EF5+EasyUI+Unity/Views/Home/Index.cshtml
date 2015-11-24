@@ -1,0 +1,35 @@
+﻿@model List<App.Models.SysSample>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Main.cshtml";  
+}
+
+<table id="List"></table>
+<script type="text/javascript">
+    $(function () {
+        $('#List').datagrid({
+            methord: 'post',
+            url: '/Home/GetList',
+            fit: true,
+            border: true,
+            style: { borderWidth: 20 },
+            fitColumns: true,
+            sortName: 'Id',
+            sortOrder: 'desc',
+            idField: 'Id',
+            striped: true, //奇偶行是否区分
+            singleSelect: false,//单选模式
+            rownumbers: true,//行号
+            columns: [[
+                { field: 'Id', title: 'ID', width: 80 },
+                { field: 'Name', title: '名称', width: 120 },
+                { field: 'Age', title: '年龄', width: 80, align: 'right' },
+                { field: 'Bir', title: '生日', width: 80, align: 'right' },
+                { field: 'Photo', title: '照片', width: 250 },
+                { field: 'Note', title: '说明', width: 60, align: 'center' },
+                { field: 'CreateTime', title: '创建时间', width: 60, align: 'center' }
+            ]]
+        });
+    });
+</script>

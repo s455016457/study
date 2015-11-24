@@ -1,0 +1,5 @@
+E:\shipengfei\study\MVC4+EF5+EasyUI+Unity\App.Models\bin\Debug\App.Models.dll
+E:\shipengfei\study\MVC4+EF5+EasyUI+Unity\App.Models\bin\Debug\App.Models.pdb
+E:\shipengfei\study\MVC4+EF5+EasyUI+Unity\App.Models\obj\Debug\App.Models.dll
+E:\shipengfei\study\MVC4+EF5+EasyUI+Unity\App.Models\obj\Debug\App.Models.pdb
+E:\shipengfei\study\MVC4+EF5+EasyUI+Unity\App.Models\obj\Debug\App.Models.csprojResolveAssemblyReference.cache

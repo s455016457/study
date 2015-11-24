@@ -1,0 +1,11 @@
+E:\shipengfei\study\MVC4+EF5+EasyUI+Unity\App.IDAL\bin\Debug\App.IDAL.dll
+E:\shipengfei\study\MVC4+EF5+EasyUI+Unity\App.IDAL\bin\Debug\App.IDAL.pdb
+E:\shipengfei\study\MVC4+EF5+EasyUI+Unity\App.IDAL\obj\Debug\App.IDAL.csprojResolveAssemblyReference.cache
+E:\shipengfei\study\MVC4+EF5+EasyUI+Unity\App.IDAL\obj\Debug\App.IDAL.dll
+E:\shipengfei\study\MVC4+EF5+EasyUI+Unity\App.IDAL\obj\Debug\App.IDAL.pdb
+E:\shipengfei\study\MVC4+EF5+EasyUI+Unity\App.IDAL\bin\Debug\App.IDAL.dll.config
+E:\shipengfei\study\MVC4+EF5+EasyUI+Unity\App.IDAL\bin\Debug\App.Entity.dll
+E:\shipengfei\study\MVC4+EF5+EasyUI+Unity\App.IDAL\bin\Debug\EntityFramework.dll
+E:\shipengfei\study\MVC4+EF5+EasyUI+Unity\App.IDAL\bin\Debug\App.Entity.pdb
+E:\shipengfei\study\MVC4+EF5+EasyUI+Unity\App.IDAL\bin\Debug\EntityFramework.xml
+E:\shipengfei\study\MVC4+EF5+EasyUI+Unity\App.IDAL\bin\Debug\zh-Hans\EntityFramework.resources.dll

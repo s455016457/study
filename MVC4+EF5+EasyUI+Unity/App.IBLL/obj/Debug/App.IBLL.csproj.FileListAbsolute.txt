@@ -1,0 +1,7 @@
+E:\shipengfei\study\MVC4+EF5+EasyUI+Unity\App.IBLL\bin\Debug\App.IBLL.dll
+E:\shipengfei\study\MVC4+EF5+EasyUI+Unity\App.IBLL\bin\Debug\App.IBLL.pdb
+E:\shipengfei\study\MVC4+EF5+EasyUI+Unity\App.IBLL\obj\Debug\App.IBLL.dll
+E:\shipengfei\study\MVC4+EF5+EasyUI+Unity\App.IBLL\obj\Debug\App.IBLL.pdb
+E:\shipengfei\study\MVC4+EF5+EasyUI+Unity\App.IBLL\obj\Debug\App.IBLL.csprojResolveAssemblyReference.cache
+E:\shipengfei\study\MVC4+EF5+EasyUI+Unity\App.IBLL\bin\Debug\App.Models.dll
+E:\shipengfei\study\MVC4+EF5+EasyUI+Unity\App.IBLL\bin\Debug\App.Models.pdb
