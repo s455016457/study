@@ -40,7 +40,10 @@ namespace MVC4_EF5_EasyUI_Unity
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                         "~/Scripts/modernizr-*"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include("~/Content/site.css"));
+            bundles.Add(new StyleBundle("~/Content/themes/css").Include("~/Content/themes/icon.css"
+                //, "~/Content/themes/color.css"
+                //, "~/Content/themes/mobile.css"
+                ));
             bundles.Add(new StyleBundle("~/Content/themes/default/css").Include("~/Content/themes/default/easyui.css"));
         }
     }

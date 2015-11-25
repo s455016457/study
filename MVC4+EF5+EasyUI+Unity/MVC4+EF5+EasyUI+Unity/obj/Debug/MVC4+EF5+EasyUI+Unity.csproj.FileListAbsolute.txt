@@ -113,3 +113,7 @@ E:\shipengfei\study\MVC4+EF5+EasyUI+Unity\MVC4+EF5+EasyUI+Unity\bin\Microsoft.Pr
 E:\shipengfei\study\MVC4+EF5+EasyUI+Unity\MVC4+EF5+EasyUI+Unity\bin\System.Web.Mvc.dll
 E:\shipengfei\study\MVC4+EF5+EasyUI+Unity\MVC4+EF5+EasyUI+Unity\bin\System.Web.Mvc.xml
 E:\shipengfei\study\MVC4+EF5+EasyUI+Unity\MVC4+EF5+EasyUI+Unity\bin\zh-Hans\System.Web.Mvc.resources.dll
+E:\shipengfei\study\MVC4+EF5+EasyUI+Unity\MVC4+EF5+EasyUI+Unity\bin\App.Common.dll
+E:\shipengfei\study\MVC4+EF5+EasyUI+Unity\MVC4+EF5+EasyUI+Unity\bin\App.Common.pdb
+E:\shipengfei\study\MVC4+EF5+EasyUI+Unity\MVC4+EF5+EasyUI+Unity\bin\App.Extensions.dll
+E:\shipengfei\study\MVC4+EF5+EasyUI+Unity\MVC4+EF5+EasyUI+Unity\bin\App.Extensions.pdb
