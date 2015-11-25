@@ -48,10 +48,28 @@ namespace MVC4_EF5_EasyUI_Unity.Controllers
             return View();
         }
 
+        #region 更新
         public ActionResult Edit()
         {
             return View();
         }
+
+        [HttpPost]
+        public JsonResult Edit(App.Models.SysSample model)
+        {
+
+
+            if (bal.Edit(model))
+            {
+                return Json(1, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return Json(0, JsonRequestBehavior.AllowGet);
+            }
+
+        }
+        #endregion
 
         public JsonResult GetList(GridPager pager)
         {
