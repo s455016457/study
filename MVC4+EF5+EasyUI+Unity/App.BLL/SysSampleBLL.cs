@@ -37,7 +37,7 @@ namespace App.BLL
         /// <summary>
         /// 仓储层注入
         /// </summary>
-        [Dependency]
+        [Dependency]//此属性是用来标记属性和参数作为目标的注入
         public ISysSampleRepository Rep { get; set; }
         /// <summary>
         /// 获得数据列表
