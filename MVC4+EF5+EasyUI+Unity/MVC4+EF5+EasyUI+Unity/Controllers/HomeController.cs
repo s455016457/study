@@ -43,9 +43,9 @@ namespace MVC4_EF5_EasyUI_Unity.Controllers
         }
         #endregion
 
-        public ActionResult Detail()
+        public ActionResult Detail(string Id)
         {
-            return View();
+            return View(bal.GetById(Id));
         }
 
         #region 更新

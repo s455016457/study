@@ -15,14 +15,17 @@
  **************************************************************/
 #endregion CopyRight
 
+using App.Common;
 using App.DAL;
 using App.IBLL;
 using App.IDAL;
 using App.Models;
+using App.Extensions;
 using Microsoft.Practices.Unity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 
 namespace App.BLL
@@ -41,11 +44,26 @@ namespace App.BLL
         /// </summary>
         /// <param name="queryStr"></param>
         /// <returns></returns>
-        public List<SysSample> GetList(string queryStr)
+        public List<SysSample> GetList(string queryStr,ref GridPager pager)
         {
             var queryData = Rep.GetList(db);
+            var queryHelp = new QueryHelp();
+            var sort = pager.sort;
+            //排序
+                var type = typeof(SysSample);
+                var param = Expression.Parameter(type, type.Name);
+                var body = Expression.Property(param, pager.sort);
+                dynamic keySelector = Expression.Lambda(body, param);
+            if (pager.order == "desc")
+            {
 
-            return CreateModelList(ref queryData);
+                queryData = queryData.OrderBy(sort, true);
+            }
+            else
+            {
+                queryData = queryData.OrderBy(sort);
+            }
+            return CreateModelList(ref queryData,ref pager);
         }
 
         /// <summary>
@@ -53,10 +71,22 @@ namespace App.BLL
         /// </summary>
         /// <param name="queryData"></param>
         /// <returns></returns>
-        private List<SysSample> CreateModelList(ref IQueryable<App.Entity.SysSample> queryData)
+        private List<SysSample> CreateModelList(ref IQueryable<App.Entity.SysSample> queryData,ref GridPager pager)
         {
+            pager.totalRows = queryData.Count();
+            if (pager.totalRows > 0)
+            {
+                if (pager.page <= 1)
+                {
+                    queryData = queryData.Take(pager.rows);
+                }
+                else
+                {
+                    queryData = queryData.Skip((pager.page - 1) * pager.rows).Take(pager.rows);
+                }
+            }
             List<SysSample> modelList = (from r in queryData
-                                                    select new SysSample
+                                         select new SysSample
                                               {
                                                   Id = r.Id,
                                                   Name = r.Name,

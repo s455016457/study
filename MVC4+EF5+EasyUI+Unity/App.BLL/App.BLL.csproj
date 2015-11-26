@@ -61,6 +61,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\App.Common\App.Common.csproj">
+      <Project>{6c0cd5ce-5acd-4424-83f2-e1eb316c2811}</Project>
+      <Name>App.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\App.DAL\App.DAL.csproj">
       <Project>{6f37c79c-4aa0-4800-b79a-cc43a8fbf2b4}</Project>
       <Name>App.DAL</Name>
@@ -68,6 +72,10 @@
     <ProjectReference Include="..\App.Entity\App.Entity.csproj">
       <Project>{aef6a889-c29c-47ab-802e-520e270505a2}</Project>
       <Name>App.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\App.Extensions\App.Extensions.csproj">
+      <Project>{403bd849-6a72-4489-ab0d-536895609a8b}</Project>
+      <Name>App.Extensions</Name>
     </ProjectReference>
     <ProjectReference Include="..\App.IBLL\App.IBLL.csproj">
       <Project>{6cd7f4b2-25cd-4919-a248-f1a70cb25eec}</Project>

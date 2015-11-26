@@ -15,6 +15,7 @@
  **************************************************************/
 #endregion CopyRight
 
+using App.Common;
 using App.Models;
 using System;
 using System.Collections.Generic;
@@ -31,7 +32,7 @@ namespace App.IBLL
         /// <param name="pager">JQgrid分页</param>
         /// <param name="queryStr">搜索条件</param>
         /// <returns>列表</returns>
-        List<SysSample> GetList(string queryStr);
+        List<SysSample> GetList(string queryStr,ref GridPager pager);
         /// <summary>
         /// 创建一个实体
         /// </summary>

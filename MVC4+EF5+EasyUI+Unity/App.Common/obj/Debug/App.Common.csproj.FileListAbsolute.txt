@@ -1,4 +1,0 @@
-E:\shipengfei\study\MVC4+EF5+EasyUI+Unity\App.Common\bin\Debug\App.Common.dll
-E:\shipengfei\study\MVC4+EF5+EasyUI+Unity\App.Common\bin\Debug\App.Common.pdb
-E:\shipengfei\study\MVC4+EF5+EasyUI+Unity\App.Common\obj\Debug\App.Common.dll
-E:\shipengfei\study\MVC4+EF5+EasyUI+Unity\App.Common\obj\Debug\App.Common.pdb

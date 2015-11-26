@@ -1,9 +1,0 @@
-E:\shipengfei\study\MVC4+EF5+EasyUI+Unity\App.Entity\bin\Debug\App.Entity.dll.config
-E:\shipengfei\study\MVC4+EF5+EasyUI+Unity\App.Entity\bin\Debug\App.Entity.dll
-E:\shipengfei\study\MVC4+EF5+EasyUI+Unity\App.Entity\bin\Debug\App.Entity.pdb
-E:\shipengfei\study\MVC4+EF5+EasyUI+Unity\App.Entity\bin\Debug\EntityFramework.dll
-E:\shipengfei\study\MVC4+EF5+EasyUI+Unity\App.Entity\bin\Debug\EntityFramework.xml
-E:\shipengfei\study\MVC4+EF5+EasyUI+Unity\App.Entity\bin\Debug\zh-Hans\EntityFramework.resources.dll
-E:\shipengfei\study\MVC4+EF5+EasyUI+Unity\App.Entity\obj\Debug\App.Entity.dll
-E:\shipengfei\study\MVC4+EF5+EasyUI+Unity\App.Entity\obj\Debug\App.Entity.pdb
-E:\shipengfei\study\MVC4+EF5+EasyUI+Unity\App.Entity\obj\Debug\App.Entity.csprojResolveAssemblyReference.cache
