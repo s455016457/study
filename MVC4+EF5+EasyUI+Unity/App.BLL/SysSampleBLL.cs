@@ -39,40 +39,25 @@ namespace App.BLL
         /// </summary>
         [Dependency]//此属性是用来标记属性和参数作为目标的注入
         public ISysSampleRepository Rep { get; set; }
-        /// <summary>
-        /// 获得数据列表
-        /// </summary>
-        /// <param name="queryStr"></param>
-        /// <returns></returns>
-        public List<SysSample> GetList(string queryStr,ref GridPager pager)
+
+
+        public List<SysSample> GetList(string queryStr, Sort sort)
         {
             var queryData = Rep.GetList(db);
-            var queryHelp = new QueryHelp();
-            var sort = pager.sort;
-            //排序
-                var type = typeof(SysSample);
-                var param = Expression.Parameter(type, type.Name);
-                var body = Expression.Property(param, pager.sort);
-                dynamic keySelector = Expression.Lambda(body, param);
-            if (pager.order == "desc")
-            {
-
-                queryData = queryData.OrderBy(sort, true);
-            }
-            else
-            {
-                queryData = queryData.OrderBy(sort);
-            }
-            return CreateModelList(ref queryData,ref pager);
+            queryData = queryData.OrderBy(sort.sort, sort.order.Equals("desc", StringComparison.CurrentCultureIgnoreCase));
+            return ToSysSampleList(ref queryData);
         }
 
         /// <summary>
         /// 获得数据列表
         /// </summary>
-        /// <param name="queryData"></param>
+        /// <param name="queryStr"></param>
         /// <returns></returns>
-        private List<SysSample> CreateModelList(ref IQueryable<App.Entity.SysSample> queryData,ref GridPager pager)
+        public List<SysSample> GetListPager(string queryStr, ref GridPager pager)
         {
+            var queryData = Rep.GetList(db);
+            var sort = pager.sort;
+            queryData = queryData.OrderBy(sort, pager.order.Equals("desc", StringComparison.CurrentCultureIgnoreCase));
             pager.totalRows = queryData.Count();
             if (pager.totalRows > 0)
             {
@@ -85,18 +70,23 @@ namespace App.BLL
                     queryData = queryData.Skip((pager.page - 1) * pager.rows).Take(pager.rows);
                 }
             }
+            return ToSysSampleList(ref queryData);
+        }
+
+        private List<SysSample> ToSysSampleList(ref IQueryable<Entity.SysSample> queryData)
+        {
             List<SysSample> modelList = (from r in queryData
                                          select new SysSample
-                                              {
-                                                  Id = r.Id,
-                                                  Name = r.Name,
-                                                  Age = r.Age,
-                                                  Bir = r.Bir,
-                                                  Photo = r.Photo,
-                                                  Note = r.Note,
-                                                  CreateTime = r.CreateTime,
+                                         {
+                                             Id = r.Id,
+                                             Name = r.Name,
+                                             Age = r.Age,
+                                             Bir = r.Bir,
+                                             Photo = r.Photo,
+                                             Note = r.Note,
+                                             CreateTime = r.CreateTime,
 
-                                              }).ToList();
+                                         }).ToList();
 
             return modelList;
         }

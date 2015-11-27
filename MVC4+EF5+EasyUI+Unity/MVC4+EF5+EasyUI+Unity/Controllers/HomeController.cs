@@ -73,7 +73,7 @@ namespace MVC4_EF5_EasyUI_Unity.Controllers
 
         public JsonResult GetList(GridPager pager)
         {
-            List<App.Models.SysSample> list = bal.GetList("",ref pager);
+            List<App.Models.SysSample> list = bal.GetListPager("",ref pager);
             var json = new
             {
                 total = pager.totalRows,

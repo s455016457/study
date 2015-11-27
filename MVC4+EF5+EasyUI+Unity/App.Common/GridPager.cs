@@ -40,4 +40,16 @@ namespace App.Common
         }
 
     }
+
+    public class Sort
+    {
+        /// <summary>
+        /// 排序列
+        /// </summary>
+        public String sort { get; set; }
+        /// <summary>
+        /// 排序方式
+        /// </summary>
+        public String order { get; set; }
+    }
 }

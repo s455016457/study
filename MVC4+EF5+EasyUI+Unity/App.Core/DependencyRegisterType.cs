@@ -42,6 +42,7 @@ namespace App.Core
             container.RegisterType<ISysSampleRepository, SysSampleRepository>();
 
             container.RegisterType<ISysMenuRepository, SysMenuRepository>();
+            container.RegisterType<ISysMenuBLL, SysMenuBLL>();
         }
     }
 }

@@ -26,4 +26,57 @@ namespace App.Common
     {
 
     }
+
+    public class QueryParameter
+    {
+
+    } 
+
+    /// <summary>
+    /// 比较标记符
+    /// </summary>
+    public enum CompareSymbol : int
+    {
+        /// <summary>
+        /// 等于比较符
+        /// </summary>
+        Equal = 0,
+        /// <summary>
+        /// 大于比较符
+        /// </summary>
+        GreaterThan = 1,
+        /// <summary>
+        /// 大于或等于
+        /// </summary>
+        GreaterThanOrEqual = 2,
+        /// <summary>
+        /// 小于
+        /// </summary>
+        LessThan = 3,
+        /// <summary>
+        /// 小于或等于
+        /// </summary>
+        LessThanOrEqual = 4,
+        /// <summary>
+        /// 以XX开始
+        /// </summary>
+        StartWith = 5,
+        /// <summary>
+        /// 以XX结束
+        /// </summary>
+        EndWith = 6,
+        /// <summary>
+        /// 包含
+        /// </summary>
+        Contain = 7,
+    }
+
+    /// <summary>
+    /// 连接符
+    /// </summary>
+    public enum ConnectSysmbol : int
+    {
+        And = 1,
+        Or = 0,
+    }
 }

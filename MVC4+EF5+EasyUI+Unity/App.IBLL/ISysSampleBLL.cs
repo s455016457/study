@@ -29,10 +29,17 @@ namespace App.IBLL
         /// <summary>
         /// 获取列表
         /// </summary>
+        /// <param name="queryStr">搜索条件</param>
+        /// <param name="sort">排序</param>
+        /// <returns>列表</returns>
+        List<SysSample> GetList(string queryStr, Sort sort);
+        /// <summary>
+        /// 获取列表
+        /// </summary>
         /// <param name="pager">JQgrid分页</param>
         /// <param name="queryStr">搜索条件</param>
         /// <returns>列表</returns>
-        List<SysSample> GetList(string queryStr,ref GridPager pager);
+        List<SysSample> GetListPager(string queryStr,ref GridPager pager);
         /// <summary>
         /// 创建一个实体
         /// </summary>
