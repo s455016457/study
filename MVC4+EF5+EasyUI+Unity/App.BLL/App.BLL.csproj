@@ -57,6 +57,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="SysLogBLL.cs" />
     <Compile Include="SysMenuBLL.cs" />
     <Compile Include="SysSampleBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
