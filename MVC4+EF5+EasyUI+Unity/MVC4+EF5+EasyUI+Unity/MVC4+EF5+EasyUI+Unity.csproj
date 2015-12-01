@@ -200,6 +200,7 @@
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MainController.cs" />
     <Compile Include="Controllers\MenuController.cs" />
+    <Compile Include="Controllers\PurchaseRequestController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -210,7 +211,9 @@
     <Content Include="Content\Images\define-logo.jpg" />
     <Content Include="Content\Images\accent.png" />
     <Content Include="Content\Images\bullet.png" />
+    <Content Include="Content\Images\function.png" />
     <Content Include="Content\Images\heroAccent.png" />
+    <Content Include="Content\Images\myjob.png" />
     <Content Include="Content\Images\orderedList0.png" />
     <Content Include="Content\Images\orderedList1.png" />
     <Content Include="Content\Images\orderedList2.png" />
@@ -221,6 +224,7 @@
     <Content Include="Content\Images\orderedList7.png" />
     <Content Include="Content\Images\orderedList8.png" />
     <Content Include="Content\Images\orderedList9.png" />
+    <Content Include="Content\Images\setting.png" />
     <Content Include="Content\main.css" />
     <Content Include="Content\themes\black\easyui.css" />
     <Content Include="Content\themes\black\images\accordion_arrows.png" />
@@ -423,6 +427,7 @@
     <Content Include="Views\Home\Detail.cshtml" />
     <Content Include="Views\Error\UrlIsInvalid.cshtml" />
     <Content Include="Views\Menu\Index.cshtml" />
+    <Content Include="Views\PurchaseRequest\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

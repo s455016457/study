@@ -1,4 +1,6 @@
-﻿@{
+﻿@model IEnumerable<App.Models.SysFunction>
+
+@{
     Layout = null;
 }
 
@@ -8,10 +10,38 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Index</title>
+    @Styles.Render("~/Content/themes/css")
+    @Styles.Render("~/Content/themes/default/css")
+    <script src="@Url.Content("~/Scripts/EasyUi/jquery.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/EasyUi/jquery.easyui.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/EasyUi/locale/easyui-lang-zh_CN.js")" type="text/javascript"></script>
 </head>
-<body>
-    <div>
-        这是菜单页面
-    </div>
+<body >
+        <div class="easyui-accordion" data-options="fit:true,border:false">
+            @foreach (var item in Model)
+            {
+                <div title="@item.Name" data-options="iconCls:'@item.Iconic'" style="padding: 2px;">
+                    <ul class="easyui-tree" data-options="fit:true">
+                        <li>
+                            <span>Fruits</span>
+                            <ul>
+                                <li>apple</li>
+                                <li>orange</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span>Vegetables</span>
+                            <ul>
+                                <li>tomato</li>
+                                <li>carrot</li>
+                                <li>cabbage</li>
+                                <li>potato</li>
+                                <li>lettuce</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            }
+        </div>
 </body>
 </html>

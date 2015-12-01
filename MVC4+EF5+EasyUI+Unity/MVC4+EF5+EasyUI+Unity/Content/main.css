@@ -8,7 +8,7 @@ input{
 }
 
 .define-logo {
-	background:url('Content/Images/define-logo.jpg') no-repeat center center;
+    background-color: rgba(149, 184, 230, 0.57)
 }
 /***明细界面按钮组样式定义**/
 .tools-btn {
@@ -82,4 +82,48 @@ tr.separator hr {
     margin-top: 10px;
     margin-bottom: 10px;
     padding: 0;
+}
+
+
+.ioc-menu-setting {
+    background:url('Images/setting.png') no-repeat center center;
+}
+.ioc-menu-myjob {
+    background:url('Images/myjob.png') no-repeat center center;
+}
+.ioc-menu-function {
+    background:url('Images/function.png') no-repeat center center;
+}
+.ioc-menu-report {
+    background:url('Images/chart_pie.png') no-repeat center center;
+}
+.ioc-menu-costing {
+    background:url('Images/chart_curve.png') no-repeat center center;
+}
+.ioc-menu-oa {
+    background:url('Images/folder_page.png') no-repeat center center;
+}
+.ioc-menu-faccount {
+    background:url('Images/calculator.png') no-repeat center center;
+}
+.ioc-menu-maccount {
+    background:url('Images/calendar_view_week.png') no-repeat center center;
+}
+.ioc-menu-supplychain {
+    background:url('Images/world_link.png') no-repeat center center;
+}
+.ioc-menu-production {
+    background:url('Images/package.png') no-repeat center center;
+}
+.ioc-menu-email_edit {
+    background:url('Images/email_edit.png') no-repeat center center;
+}
+.ioc-menu-email {
+    background:url('Images/email.png') no-repeat center center;
+}
+.ioc-menu-approve {
+    background:url('Images/joystick.png') no-repeat center center;
+}
+.ioc-menu-document {
+    background:url('Images/clipboard-list.png') no-repeat center center;
 }

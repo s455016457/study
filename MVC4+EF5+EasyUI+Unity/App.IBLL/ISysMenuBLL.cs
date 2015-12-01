@@ -30,17 +30,17 @@ namespace App.IBLL
         /// <summary>
         /// 获取系统功能列表
         /// </summary>
-        /// <param name="queryStr">搜索条件</param>
+        /// <param name="list">搜索条件</param>
         /// <param name="sort">排序</param>
         /// <returns>系统功能列表</returns>
-        List<SysFunction> GetSysFounctionList(String queryStr,Sort sort);
+        List<SysFunction> GetSysFounctionList(IList<QueryParameter> list, Sort sort);
         /// <summary>
         /// 获取系统功能列表
         /// </summary>
-        /// <param name="queryStr">搜索条件</param>
+        /// <param name="list">搜索条件</param>
         /// <param name="pager">JQgrid分页</param>
         /// <returns>系统功能列表</returns>
-        List<SysFunction> GetSysFounctionListPager(String queryStr, ref GridPager pager);
+        List<SysFunction> GetSysFounctionListPager(IList<QueryParameter> list, ref GridPager pager);
         /// <summary>
         /// 根据ID获得一个系统功能
         /// </summary>
@@ -62,14 +62,14 @@ namespace App.IBLL
         /// <param name="queryStr">搜索条件</param>
         /// <param name="sort">排序</param>
         /// <returns>菜单组列表</returns>
-        List<MenuGroup> GetMenuGroupList(String queryStr, Sort sort);
+        List<MenuGroup> GetMenuGroupList(IList<QueryParameter> list, Sort sort);
         /// <summary>
         /// 获取菜单组列表
         /// </summary>
         /// <param name="queryStr">搜索条件</param>
         /// <param name="pager">JQgrid分页</param>
         /// <returns>菜单组列表</returns>
-        List<MenuGroup> GetMenuGroupListPager(String queryStr, ref GridPager pager);
+        List<MenuGroup> GetMenuGroupListPager(IList<QueryParameter> list, ref GridPager pager);
         /// <summary>
         /// 根据ID获得菜单组
         /// </summary>
@@ -91,14 +91,14 @@ namespace App.IBLL
         /// <param name="queryStr">搜索条件</param>
         /// <param name="sort">排序</param>
         /// <returns>菜单列表</returns>
-        List<Menu> GetMenuList(String queryStr, Sort sort);
+        List<Menu> GetMenuList(IList<QueryParameter> list, Sort sort);
         /// <summary>
         /// 获取菜单列表
         /// </summary>
         /// <param name="queryStr">搜索条件</param>
         /// <param name="pager">JQgrid分页</param>
         /// <returns>菜单列表</returns>
-        List<Menu> GetMenuListPager(String queryStr, ref GridPager pager);
+        List<Menu> GetMenuListPager(IList<QueryParameter> list, ref GridPager pager);
         /// <summary>
         /// 根据ID获得菜单
         /// </summary>

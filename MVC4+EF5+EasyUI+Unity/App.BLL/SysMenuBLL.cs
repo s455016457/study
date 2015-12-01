@@ -39,49 +39,21 @@ namespace App.BLL
         [Dependency]//此属性是用来标记属性和参数作为目标的注入
         public ISysMenuRepository Rep { get; set; }
         #region 系统功能
-        public List<SysFunction> GetSysFounctionList(string queryStr, Sort sort)
+        public List<SysFunction> GetSysFounctionList(IList<QueryParameter> list, Sort sort)
         {
             var queryData = Rep.GetSysFunctionList(db);
-            //Expression.Call(null, null);
-            //Expression.Call(null
-            //    , ((MethodInfo)MethodBase.GetCurrentMethod()).MakeGenericMethod(new Type[] { typeof(App.Entity.SysFunction) })
-            //    , new Expression[] { queryData.Expression, Expression.Quote((Expression.Lambda(Expression.Parameter(typeof(App.Entity.SysFunction))))) }
-            //);
-
-            var type = typeof(App.Entity.SysFunction);
-            var p = Expression.Parameter(typeof(App.Entity.SysFunction), "p");
-            var propertyName = Expression.Property(p, "SysFunction_Id");
-
-            var body = Expression.Equal(Expression.Constant(true), Expression.Constant(true));
-            body = Expression.And(body, Expression.Call(propertyName, "StartsWith", null, Expression.Constant(queryStr)));
-            body = Expression.And(body, Expression.Call(propertyName, "StartsWith", null, Expression.Constant(queryStr)));
-            body = Expression.And(body, Expression.Call(propertyName, "StartsWith", null, Expression.Constant(queryStr)));
-
-            var body2 = Expression.Equal(Expression.Constant(true), Expression.Constant(true));
-            body2 = Expression.OrElse(body2, Expression.Call(propertyName, "StartsWith", null, Expression.Constant(queryStr)));
-            body2 = Expression.OrElse(body2, Expression.Call(propertyName, "StartsWith", null, Expression.Constant(queryStr)));
-            body2 = Expression.OrElse(body2, Expression.Call(propertyName, "StartsWith", null, Expression.Constant(queryStr)));
-
-            body = Expression.And(body, body2);
-            Expression<Func<App.Entity.SysFunction, bool>> condition = Expression.Lambda<Func<App.Entity.SysFunction, bool>>(body, p);
-
-            //Expression<Func<App.Entity.SysFunction, bool>> condition = c => (
-            //    (c.SysFunction_Id == queryStr&&c.SysFunction_Id=="") 
-            //    || c.SysFunction_Id == queryStr) 
-            //    && c.SysFunction_Id=="";
-
-            
+            var condition = QueryHelp.ToExpression<App.Entity.SysFunction>(list);
             queryData = queryData.Where(condition);
-            //queryData.Where(p => p.SysFunction_Id == queryStr || p.SysFunction_Id == queryStr);
             queryData = queryData.OrderBy(sort.sort, sort.order.Equals("desc", StringComparison.CurrentCultureIgnoreCase));
             return ToSysFunctionList(ref queryData);
             
         }
 
-        public List<SysFunction> GetSysFounctionListPager(string queryStr, ref GridPager pager)
+        public List<SysFunction> GetSysFounctionListPager(IList<QueryParameter> list, ref GridPager pager)
         {
             var queryData = Rep.GetSysFunctionList(db);
-            queryData = queryData.Where(p => p.SysFunction_Id.Equals(queryStr));
+            var condition = QueryHelp.ToExpression<App.Entity.SysFunction>(list);
+            queryData = queryData.Where(condition);
             queryData = queryData.OrderBy(pager.sort, pager.order.Equals("desc", StringComparison.CurrentCultureIgnoreCase));
             pager.totalRows = queryData.Count();
             if (pager.totalRows > 0)
@@ -138,14 +110,63 @@ namespace App.BLL
         #endregion
 
         #region 菜单组
-        public List<MenuGroup> GetMenuGroupList(string queryStr, Sort sort)
+        public List<MenuGroup> GetMenuGroupList(IList<QueryParameter> list, Sort sort)
         {
-            throw new NotImplementedException();
+            var queryData = Rep.GetMenuGroupList(db);
+            var condition = QueryHelp.ToExpression<App.Entity.MenuGroup>(list);
+            queryData = queryData.Where(condition);
+            queryData = queryData.OrderBy(sort.sort, sort.order.Equals("desc", StringComparison.CurrentCultureIgnoreCase));
+            return ToMenuGroupList(ref queryData);
         }
 
-        public List<Models.MenuGroup> GetMenuGroupListPager(string queryStr, ref Common.GridPager pager)
+        public List<Models.MenuGroup> GetMenuGroupListPager(IList<QueryParameter> list, ref Common.GridPager pager)
         {
-            throw new NotImplementedException();
+            var queryData = Rep.GetMenuGroupList(db);
+            var condition = QueryHelp.ToExpression<App.Entity.MenuGroup>(list);
+            queryData = queryData.Where(condition);
+            queryData = queryData.OrderBy(pager.sort, pager.order.Equals("desc", StringComparison.CurrentCultureIgnoreCase));
+            pager.totalRows = queryData.Count();
+            if (pager.totalRows > 0)
+            {
+                if (pager.page <= 1)
+                {
+                    queryData = queryData.Take(pager.rows);
+                }
+                else
+                {
+                    queryData = queryData.Skip((pager.page - 1) * pager.rows).Take(pager.rows);
+                }
+            }
+            return ToMenuGroupList(ref queryData);
+        }
+
+        /// <summary>
+        /// 获得数据列表
+        /// </summary>
+        /// <param name="queryData"></param>
+        /// <returns></returns>
+        private List<MenuGroup> ToMenuGroupList(ref IQueryable<App.Entity.MenuGroup> queryData)
+        {
+
+            List<MenuGroup> modelList = (from r in queryData
+                                         // 外连接
+                                         //join b in Rep.GetMenuGroupList(db) on r.SysFunction_Id equals b.SysFunction_Id 
+                                         select new MenuGroup
+                                           {
+                                               SysFunction_Id = r.SysFunction_Id,
+                                               MenuGroup_Id = r.MenuGroup_Id,
+                                               CreatePerson = r.CreatePerson,
+                                               CreateTime = r.CreateTime,
+                                               EnglishName = r.EnglishName,
+                                               Iconic = r.Iconic,
+                                               Name = r.Name,
+                                               Remark = r.Remark,
+                                               Sort = r.Sort,
+                                               State = r.State.HasValue ? r.State.Value : false,
+                                               Version = r.Version
+                                           }).ToList();
+
+            return modelList;
         }
 
         public Models.MenuGroup GetMenuGroupById(string Id)
@@ -160,14 +181,65 @@ namespace App.BLL
         #endregion
 
         #region 菜单
-        public List<Menu> GetMenuList(string queryStr, Sort sort)
+        public List<Menu> GetMenuList(IList<QueryParameter> list, Sort sort)
         {
-            throw new NotImplementedException();
+            var queryData = Rep.GetMenuList(db);
+            var condition = QueryHelp.ToExpression<App.Entity.Menu>(list);
+            queryData = queryData.Where(condition);
+            queryData = queryData.OrderBy(sort.sort, sort.order.Equals("desc", StringComparison.CurrentCultureIgnoreCase));
+            return ToMenuList(ref queryData);
         }
 
-        public List<Models.Menu> GetMenuListPager(string queryStr, ref Common.GridPager pager)
+        public List<Models.Menu> GetMenuListPager(IList<QueryParameter> list, ref Common.GridPager pager)
         {
-            throw new NotImplementedException();
+            var queryData = Rep.GetMenuList(db);
+            var condition = QueryHelp.ToExpression<App.Entity.Menu>(list);
+            queryData = queryData.Where(condition);
+            queryData = queryData.OrderBy(pager.sort, pager.order.Equals("desc", StringComparison.CurrentCultureIgnoreCase));
+            pager.totalRows = queryData.Count();
+            if (pager.totalRows > 0)
+            {
+                if (pager.page <= 1)
+                {
+                    queryData = queryData.Take(pager.rows);
+                }
+                else
+                {
+                    queryData = queryData.Skip((pager.page - 1) * pager.rows).Take(pager.rows);
+                }
+            }
+            return ToMenuList(ref queryData);
+        }
+
+        /// <summary>
+        /// 获得数据列表
+        /// </summary>
+        /// <param name="queryData"></param>
+        /// <returns></returns>
+        private List<Menu> ToMenuList(ref IQueryable<App.Entity.Menu> queryData)
+        {
+
+            List<Menu> modelList = (from r in queryData
+                                    // 外连接
+                                    //join b in Rep.GetMenuGroupList(db) on r.SysFunction_Id equals b.SysFunction_Id 
+                                    select new Menu
+                                         {
+                                             Menu_Id = r.Menu_Id,
+                                             MenuGroup_Id = r.MenuGroup_Id,
+                                             CreatePerson = r.CreatePerson,
+                                             CreateTime = r.CreateTime,
+                                             EnglishName = r.EnglishName,
+                                             Iconic = r.Iconic,
+                                             Name = r.Name,
+                                             Remark = r.Remark,
+                                             Sort = r.Sort,
+                                             State = r.State.HasValue ? r.State.Value : false,
+                                             Version = r.Version,
+                                             ModelId = r.ModelId,
+                                             Url = r.Url
+                                         }).ToList();
+
+            return modelList;
         }
 
         public Models.Menu GetMenuById(string Id)

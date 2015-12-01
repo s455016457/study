@@ -42,7 +42,7 @@ namespace App.Models
         public String Iconic { get; set; }
 
         [Display(Name = "排序")]
-        public int Sort { get; set; }
+        public int? Sort { get; set; }
 
         [Display(Name = "说明")]
         public String Remark { get; set; }
@@ -54,7 +54,7 @@ namespace App.Models
         public String CreatePerson { get; set; }
 
         [Display(Name = "创建时间")]
-        public DateTime CreateTime { get; set; }
+        public DateTime? CreateTime { get; set; }
 
         [Display(Name = "版本")]
         public String Version { get; set; }
