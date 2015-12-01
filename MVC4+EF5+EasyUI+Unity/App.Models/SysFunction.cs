@@ -23,7 +23,7 @@ using System.Text;
 
 namespace App.Models
 {
-    public class SysFunction
+    public class SysFunction : BaseModel
     {
         [Display(Name = "系统功能ID")]
         [Key]

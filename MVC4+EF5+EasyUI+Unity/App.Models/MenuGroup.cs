@@ -23,7 +23,7 @@ using System.Text;
 
 namespace App.Models
 {
-    public class MenuGroup
+    public class MenuGroup : BaseModel
     {
         [Display(Name = "管理模块ID")]
         [Key]

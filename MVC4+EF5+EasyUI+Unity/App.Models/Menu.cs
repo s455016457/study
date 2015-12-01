@@ -23,7 +23,7 @@ using System.Text;
 
 namespace App.Models
 {
-    public class Menu
+    public class Menu : BaseModel
     {
         [Display(Name = "菜单ID")]
         public String Menu_Id { get; set; }

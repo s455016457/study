@@ -1,10 +1,10 @@
 #region CopyRight
 /**************************************************************
-   Copyright (c) 2015 StarPeng. All rights reserved.
+   Copyright (c) 2015 shipengfei. All rights reserved.
    CLR版本        :    4.0.30319.34209
-   命名空间名称   :    $rootnamespace$
-   文件名         :    Class1
-   创建时间       :    2015-11-24 10:51:14
+   命名空间名称   :    App.Models.Sys
+   文件名         :    SysLogModel
+   创建时间       :    2015-12-01 16:27:02
    用户所在的域   :    SHIPENGFEI
    登录用户名     :    Administrator
    文件描述       :    
@@ -21,33 +21,30 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 
-namespace App.Models
+namespace App.Models.Sys
 {
-    public class SysSample : BaseModel
+    public class SysLogModel : BaseModel
     {
         [Display(Name = "ID")]
         public string Id { get; set; }
 
+        [Display(Name = "操作人")]
+        public string Operator { get; set; }
 
-        [Display(Name = "名称")]
-        public string Name { get; set; }
+        [Display(Name = "信息")]
+        public string Message { get; set; }
 
+        [Display(Name = "结果")]
+        public string Result { get; set; }
 
-        [Display(Name = "年龄")]
-        [Range(0, 10000)]
-        public int? Age { get; set; }
+        [Display(Name = "类型")]
+        public string Type { get; set; }
 
-        [Display(Name = "生日")]
-        public DateTime? Bir { get; set; }
-
-        [Display(Name = "照片")]
-        public string Photo { get; set; }
-
-
-        [Display(Name = "简介")]
-        public string Note { get; set; }
+        [Display(Name = "模块")]
+        public string Module { get; set; }
 
         [Display(Name = "创建时间")]
         public DateTime? CreateTime { get; set; }
     }
 }
+

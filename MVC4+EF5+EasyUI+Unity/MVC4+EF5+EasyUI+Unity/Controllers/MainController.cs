@@ -1,5 +1,6 @@
 ﻿using App.Common;
 using App.IBLL;
+using App.Models.Sys;
 using Microsoft.Practices.Unity;
 using System;
 using System.Collections.Generic;
@@ -21,6 +22,11 @@ namespace MVC4_EF5_EasyUI_Unity.Controllers
 
         public ActionResult Index()
         {
+            AccountModel account = new AccountModel();
+            account.Id = "admin";
+            account.TrueName = "admin";
+            Session["Account"] = account;
+
             Sort sort = new Sort()
             {
                 sort = "Sort",

@@ -25,7 +25,7 @@ using System.Text;
 
 namespace App.DAL
 {
-    public class SysMenuRepository : ISysMenuRepository
+    public class SysMenuRepository: IDisposable, ISysMenuRepository
     {
         #region 系统功能
         /// <summary>
@@ -272,6 +272,11 @@ namespace App.DAL
             return GetMenuById(id) != null;
         }
         #endregion
+
+        public void Dispose()
+        {
+            
+        }
     }
 }
 

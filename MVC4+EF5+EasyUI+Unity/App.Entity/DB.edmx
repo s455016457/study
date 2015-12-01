@@ -9,6 +9,7 @@
           <EntitySet Name="Menu" EntityType="DB.Store.Menu" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="MenuGroup" EntityType="DB.Store.MenuGroup" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="SysFunction" EntityType="DB.Store.SysFunction" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SysLog" EntityType="DB.Store.SysLog" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="SysSample" EntityType="DB.Store.SysSample" store:Type="Tables" Schema="dbo" />
         </EntityContainer>
         <EntityType Name="Menu">
@@ -60,6 +61,18 @@
           <Property Name="CreateTime" Type="datetime" />
           <Property Name="Version" Type="varchar" MaxLength="50" />
         </EntityType>
+        <EntityType Name="SysLog">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Operator" Type="varchar" MaxLength="50" />
+          <Property Name="Message" Type="varchar" MaxLength="500" />
+          <Property Name="Result" Type="varchar" MaxLength="20" />
+          <Property Name="Type" Type="varchar" MaxLength="20" />
+          <Property Name="Module" Type="varchar" MaxLength="20" />
+          <Property Name="CreateTime" Type="datetime" />
+        </EntityType>
         <EntityType Name="SysSample">
           <Key>
             <PropertyRef Name="Id" />
@@ -81,6 +94,7 @@
           <EntitySet Name="Menu" EntityType="DB.Menu" />
           <EntitySet Name="MenuGroup" EntityType="DB.MenuGroup" />
           <EntitySet Name="SysFunction" EntityType="DB.SysFunction" />
+          <EntitySet Name="SysLog" EntityType="DB.SysLog" />
           </EntityContainer>
         <EntityType Name="SysSample">
           <Key>
@@ -142,6 +156,18 @@
           <Property Type="String" Name="CreatePerson" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Type="DateTime" Name="CreateTime" Precision="3" />
           <Property Type="String" Name="Version" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="SysLog">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="String" Name="Id" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Operator" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Message" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Result" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Type" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Module" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="CreateTime" Precision="3" />
         </EntityType>
         </Schema>
     </edmx:ConceptualModels>
@@ -213,6 +239,19 @@
                 <ScalarProperty Name="EnglishName" ColumnName="EnglishName" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="SysFunction_Id" ColumnName="SysFunction_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SysLog">
+            <EntityTypeMapping TypeName="DB.SysLog">
+              <MappingFragment StoreEntitySet="SysLog">
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="Module" ColumnName="Module" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Result" ColumnName="Result" />
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="Operator" ColumnName="Operator" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
