@@ -73,9 +73,9 @@ namespace App.BLL
             return modelList;
         }
 
-        public SysLog GetById(string id)
+        public SysLogModel GetById(string id)
         {
-            return logRepository.GetById(id);
+            throw new NotImplementedException();
         }
     }
 }

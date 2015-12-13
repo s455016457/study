@@ -31,7 +31,7 @@
             @foreach (var item in Model)
             {
                 <div title="@item.Name" data-options="iconCls:'@item.Iconic'" style="padding: 2px;">
-                    <ul class="easyui-tree" data-options="fit:true,url:'Menu/GetMenuGroupTree?SysFunctionid=@item.SysFunction_Id'">
+                    <ul class="easyui-tree" data-options="fit:true,url:'../Menu/GetMenuGroupTree?SysFunctionid=@item.SysFunction_Id'">
                     </ul>
                 </div>
             }
@@ -41,7 +41,7 @@
     <div data-options="region:'center',border:false">
         <div id="mainTab">
             <div title="我的桌面" data-options="closable:false" style="overflow: hidden; background: #fff">
-                <iframe scrolling="auto" frameborder="0" src="/Home" style="width: 100%; height: 100%;"></iframe>
+                <iframe scrolling="auto" frameborder="0" src="~/Home" style="width: 100%; height: 100%;"></iframe>
             </div>
         </div>
     </div>
@@ -91,6 +91,11 @@
                 /*重新设置该标签 */
                 var url = $(".tabs-panels .panel").eq($('.tabs-selected').index()).find("iframe").attr("src");
                 $(".tabs-panels .panel").eq($('.tabs-selected').index()).find("iframe").attr("src", url);
+            });
+            $('#tab_menu-openFrame').click(function () {
+                /*重新设置该标签 */
+                var url = $(".tabs-panels .panel").eq($('.tabs-selected').index()).find("iframe").attr("src");
+                window.open(url);
             });
             //关闭当前
             $('#tab_menu-tabclose').click(function () {

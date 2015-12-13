@@ -15,10 +15,12 @@
  **************************************************************/
 #endregion CopyRight
 
+using App.Common;
 using App.Core;
 using Microsoft.Practices.Unity;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Http;
@@ -51,21 +53,43 @@ namespace MVC4_EF5_EasyUI_Unity
             var container = new UnityContainer();//初始化统一容器
             DependencyRegisterType.Container_Sys(ref container);//系统注入
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));//使用指定的依赖关系解析程序接口，为依赖关系解析程序提供一个注册点。
+
+            //自动配置log4net
+            String logConfigUrl = HttpContext.Current.Server.MapPath("Log.config");
+            FileInfo fileInfo = new FileInfo(logConfigUrl);
+            LogHander.SetConfig(fileInfo);
         }
 
-        public static void RegisterRoutes(RouteCollection routes)
+        /// <summary>
+        /// 全局异常粗粒
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void Application_Error(object sender, EventArgs e)
         {
-            routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
-            routes.MapRoute(
-                "Login"
-                ,"{controller}/{action}/{id}"
-                ,new { controller = "Login", action = "Index", id = UrlParameter.Optional }
-           );
-            routes.MapRoute(
-                "Default"
-                ,"{controller}/{action}/{id}"
-                ,new { controller = "Main", action = "Index", id = UrlParameter.Optional }
-           );
+            String strUrl = HttpContext.Current.Request.Url.ToString();
+            HttpServerUtility server = HttpContext.Current.Server;
+            Exception lastError = server.GetLastError();
+            if (lastError != null)
+            {
+                // 此处进行异常记录，可以记录到数据库或文本，也可以使用其他日志记录组件。
+                ExceptionHander.WriteException(lastError);
+                Application["LastError"] = lastError;
+                int statusCode = HttpContext.Current.Response.StatusCode;
+                //string exceptionOperator = "/SysException/Error";
+                //try
+                //{
+                //    if (!String.IsNullOrEmpty(exceptionOperator))
+                //    {
+                //        exceptionOperator = new System.Web.UI.Control().ResolveUrl(exceptionOperator);
+                //        string url = string.Format("{0}?ErrorUrl={1}", exceptionOperator, server.UrlEncode(strUrl));
+                //        string script = String.Format("<script language='javascript' type='text/javascript'>window.top.location='{0}';</script>", url);
+                //        Response.Write(script);
+                //        Response.End();
+                //    }
+                //}
+                //catch { }
+            }
         }
     }
 }
