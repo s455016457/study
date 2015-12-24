@@ -14,24 +14,34 @@
     <script src="~/Scripts/EasyUi/extend/juqery.easyui.dialog.extend.js"></script>*@
 </head>
 <body >
+    <script type="text/javascript">
+        var dialog = {};
+        dialog.opgions = {
+            title: '新增',
+            iconCls: 'icon-add',
+            onSave: function () { },
+            onAdd: function () { },
+            toolbar: [{
+                iconCls: 'icon-save',
+                text: 'save',
+                handler: function () {
+                    $("#addView").dialog("options").onSave.call($("#addView"));
+                }
+            }, {
+                iconCls: 'icon-add',
+                text: 'new',
+                handler: function () {
+                    $("#addView").dialog("options").onAdd.call($("#addView"));
+                }
+            }]
+        };
+    </script>
     <div id="addView">
         @RenderBody()
     </div>
 <script type="text/javascript">
     $(function () {
-        $("#addView").dialog({
-            title: '新增',
-            iconCls: 'icon-add',
-            toolbar: [{
-                iconCls: 'icon-save',
-                text: 'save',
-                handler: function () { alert('save') }
-            }, {
-                iconCls: 'icon-add',
-                text: 'new',
-                handler: function () { alert('new') }
-            }]
-        }).dialog('open');
+        $("#addView").dialog(dialog.opgions).dialog('open');
     });
 </script>
 </body>

@@ -96,6 +96,12 @@
 
 <script type="text/javascript">
     $(function () {
+        $.extend(dialog.opgions, {
+            onSave: function () { $.messager.alert('温馨提示', 'Save!save url:Home/Update?data=data'); },
+            onAdd: function () { $.messager.alert('温馨提示', 'Add!add url:Home/Create'); },
+            onRemove: function () { $.messager.alert('温馨提示', 'Remove!remove url:Home/Remove?data=data'); },
+            url: 'Home/Edit'
+        });
         
     });
 </script>

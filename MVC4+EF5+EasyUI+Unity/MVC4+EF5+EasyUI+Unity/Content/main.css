@@ -130,3 +130,8 @@ tr.separator hr {
 .icon-pop{
 	background:url('Images/pop.png') no-repeat center center;
 }
+
+
+.shade-show{ display: block;  position: absolute;  top: 0%;  left: 0%;  width: 100%;  height: 100%;  background-color: black;  z-index:1001;  -moz-opacity: 0.2;  opacity:.20;  filter: alpha(opacity=20);}
+
+.shade-hide{ display: none;  position: absolute;  top: 0%;  left: 0%;  width: 100%;  height: 100%;  background-color: black;  z-index:1001;  -moz-opacity: 0.2;  opacity:.20;  filter: alpha(opacity=20);}

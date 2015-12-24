@@ -31,7 +31,7 @@
             @foreach (var item in Model)
             {
                 <div title="@item.Name" data-options="iconCls:'@item.Iconic'" style="padding: 2px;">
-                    <ul class="easyui-tree" data-options="fit:true,url:'Menu/GetMenuGroupTree?SysFunctionid=@item.SysFunction_Id'">
+                    <ul class="easyui-tree" data-options="fit:true,url:'../Menu/GetMenuGroupTree?SysFunctionid=@item.SysFunction_Id'">
                     </ul>
                 </div>
             }

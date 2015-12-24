@@ -31,15 +31,13 @@
         onClose: function () {
             $(this).parent().next().remove();
             $(this).parent().remove();
-            $("#shadeDiv").remove();
-            $('<div id="modalwindow" style="display:none"></div>').appendTo($('#mainTab').tabs("getSelected"));
-        },
-        onBeforeClose: function () {
-            $("#shadeDiv").remove();
+            $("#dialogshadeDiv").removeClass("shade-show");
+            $("#dialogshadeDiv").addClass("shade-hide");
         },
         onOpen: function () {
-            $('<div id="shadeDiv" style="filter:alpha(opacity=90);position: absolute; z-index: 1000; top: 0px; left: 0px; width: 100%; height: 100%; background: #DDDDDB; text-align: center; padding-top: 20%;"></div>').appendTo($('#mainTab').tabs("getSelected"));
-            $("#modalwindow").remove();
+            $('<div id="dialogshadeDiv"></div>').appendTo($(this).parent().parent());
+            $("#dialogshadeDiv").removeClass("shade-hide");
+            $("#dialogshadeDiv").addClass("shade-show");
         }
     });
 })(jQuery);

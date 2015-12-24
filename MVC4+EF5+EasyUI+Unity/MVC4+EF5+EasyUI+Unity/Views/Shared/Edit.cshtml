@@ -14,28 +14,41 @@
     <script src="~/Scripts/EasyUi/extend/juqery.easyui.dialog.extend.js"></script>*@
 </head>
 <body>
+    <script type="text/javascript">
+        var dialog = {};
+        dialog.opgions = {
+            title: '编辑',
+            iconCls: 'icon-edit',
+            onSave: function () { },
+            onAdd: function () { },
+            onRemove: function () { },
+            toolbar: [{
+                iconCls: 'icon-save',
+                text: 'save',
+                handler: function () {
+                    $("#editView").dialog("options").onSave.call($("#editView"));
+                }
+            }, {
+                iconCls: 'icon-add',
+                text: 'new',
+                handler: function () {
+                    $("#editView").dialog("options").onAdd.call($("#editView"));
+                }
+            }, {
+                iconCls: 'icon-remove',
+                text: 'remove',
+                handler: function () {
+                    $("#editView").dialog("options").onRemove.call($("#editView"));
+                }
+            }]
+        };
+    </script>
     <div id="editView">
         @RenderBody()
     </div>
     <script type="text/javascript">
         $(function () {
-            $("#editView").dialog({
-                title: '编辑',
-                iconCls: 'icon-edit',
-                toolbar: [{
-                    iconCls: 'icon-save',
-                    text: 'save',
-                    handler: function () { alert('save') }
-                },{
-                    iconCls: 'icon-add',
-                    text: 'new',
-                    handler: function () { alert('new') }
-                }, {
-                    iconCls: 'icon-remove',
-                    text: 'remove',
-                    handler: function () { alert('remove') }
-                }]
-            }).dialog('open');
+            $("#editView").dialog(dialog.opgions).dialog('open');
         });
     </script>
 </body>
