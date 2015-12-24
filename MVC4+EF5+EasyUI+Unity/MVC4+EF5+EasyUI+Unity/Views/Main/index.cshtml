@@ -31,7 +31,7 @@
             @foreach (var item in Model)
             {
                 <div title="@item.Name" data-options="iconCls:'@item.Iconic'" style="padding: 2px;">
-                    <ul class="easyui-tree" data-options="fit:true,url:'../Menu/GetMenuGroupTree?SysFunctionid=@item.SysFunction_Id'">
+                    <ul class="easyui-tree" data-options="fit:true,url:'Menu/GetMenuGroupTree?SysFunctionid=@item.SysFunction_Id'">
                     </ul>
                 </div>
             }
@@ -216,18 +216,6 @@
                 }
             });
 
-            ///*为选项卡绑定右键*/
-            //$(".tabs li").bind('contextmenu', function (e) {
-            //    /*选中当前触发事件的选项卡 */
-            //    var subtitle = $(this).text();
-            //    $('#mainTab').tabs('select', subtitle);
-            //    //显示快捷菜单
-            //    $('#tab_menu').menu('show', {
-            //        left: e.pageX,
-            //        top: e.pageY
-            //    });
-            //    return false;
-            //});
         });
 
         function addTab(subtitle, url, icon) {

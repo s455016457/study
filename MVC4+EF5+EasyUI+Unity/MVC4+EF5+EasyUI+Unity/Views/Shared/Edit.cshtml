@@ -4,15 +4,39 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
+    @*<link href="~/Content/main.css" rel="stylesheet" />
     @Styles.Render("~/Content/themes/css")
     @Styles.Render("~/Content/themes/default/css")
     <script src="@Url.Content("~/Scripts/EasyUi/jquery.min.js")" type="text/javascript"></script>
     <script src="@Url.Content("~/Scripts/EasyUi/jquery.easyui.min.js")" type="text/javascript"></script>
     <script src="@Url.Content("~/Scripts/EasyUi/locale/easyui-lang-zh_CN.js")" type="text/javascript"></script>
+    <script src="~/Scripts/jquery.easyui.plus.js"></script>
+    <script src="~/Scripts/EasyUi/extend/juqery.easyui.dialog.extend.js"></script>*@
 </head>
 <body>
-    <div>
+    <div id="editView">
         @RenderBody()
     </div>
+    <script type="text/javascript">
+        $(function () {
+            $("#editView").dialog({
+                title: '编辑',
+                iconCls: 'icon-edit',
+                toolbar: [{
+                    iconCls: 'icon-save',
+                    text: 'save',
+                    handler: function () { alert('save') }
+                },{
+                    iconCls: 'icon-add',
+                    text: 'new',
+                    handler: function () { alert('new') }
+                }, {
+                    iconCls: 'icon-remove',
+                    text: 'remove',
+                    handler: function () { alert('remove') }
+                }]
+            }).dialog('open');
+        });
+    </script>
 </body>
 </html>

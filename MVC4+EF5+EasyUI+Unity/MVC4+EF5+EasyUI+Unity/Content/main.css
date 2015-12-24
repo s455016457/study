@@ -127,3 +127,6 @@ tr.separator hr {
 .ioc-menu-document {
     background:url('Images/clipboard-list.png') no-repeat center center;
 }
+.icon-pop{
+	background:url('Images/pop.png') no-repeat center center;
+}

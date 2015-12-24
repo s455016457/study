@@ -10,8 +10,16 @@
     <title>路径无效</title>
 </head>
 <body>
-    <div>
+    <div id="errorView">
         请求路径无效！请与管理员联系！
     </div>
+    <script type="text/javascript">
+        $(function () {
+            $("#errorView").dialog({
+                title: '路径无效',
+                iconCls: 'icon-no'
+            }).dialog('open');
+        });
+    </script>
 </body>
 </html>

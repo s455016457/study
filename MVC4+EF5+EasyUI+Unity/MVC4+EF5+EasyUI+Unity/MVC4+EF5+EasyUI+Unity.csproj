@@ -224,6 +224,7 @@
     <Content Include="Content\Images\orderedList7.png" />
     <Content Include="Content\Images\orderedList8.png" />
     <Content Include="Content\Images\orderedList9.png" />
+    <Content Include="Content\Images\pop.png" />
     <Content Include="Content\Images\setting.png" />
     <Content Include="Content\main.css" />
     <Content Include="Content\themes\black\easyui.css" />
@@ -369,7 +370,7 @@
     </Content>
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\EasyUi\extend\jquery.easyui.messager.extend.js" />
-    <Content Include="Scripts\EasyUi\extend\juqery.easyui.window.extend.js" />
+    <Content Include="Scripts\EasyUi\extend\juqery.easyui.dialog.extend.js" />
     <Content Include="Scripts\EasyUi\jquery.easyui.min.js" />
     <Content Include="Scripts\EasyUi\jquery.min.js" />
     <Content Include="Scripts\EasyUi\locale\easyui-lang-af.js" />

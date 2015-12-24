@@ -54,14 +54,14 @@ namespace MVC4_EF5_EasyUI_Unity
             DependencyRegisterType.Container_Sys(ref container);//系统注入
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));//使用指定的依赖关系解析程序接口，为依赖关系解析程序提供一个注册点。
 
-            //自动配置log4net
+            //使用Log.config配置log4net
             String logConfigUrl = HttpContext.Current.Server.MapPath("Log.config");
             FileInfo fileInfo = new FileInfo(logConfigUrl);
             LogHander.SetConfig(fileInfo);
         }
 
         /// <summary>
-        /// 全局异常粗粒
+        /// 全局异常处理
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
