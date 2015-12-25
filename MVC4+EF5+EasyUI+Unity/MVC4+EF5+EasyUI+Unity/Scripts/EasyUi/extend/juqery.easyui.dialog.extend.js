@@ -20,11 +20,11 @@
             iconCls: 'icon-pop',
             title: '新窗口打开',
             handler: function () {
-                var dialogView = $(this.parentElement.parentElement.parentElement).find('.panel-body');
-                var toobalHtml = dialogView.parent().find('.dialog-toolbar');
-                //希望新的选项卡中带有这个button
-                console.log(toobalHtml);
-                window.open(dialogView.dialog('options').url);
+                var dialogView = $(this).parent().parent().parent().find('.panel-body');
+                var url = dialogView.dialog('options').url;
+                url += (url.indexOf('?') < 0) ? '?' : '&';
+                url += 'isBrowserNewTab=true';
+                window.open(".." + url);
                 dialogView.dialog('close');
             }
         }],

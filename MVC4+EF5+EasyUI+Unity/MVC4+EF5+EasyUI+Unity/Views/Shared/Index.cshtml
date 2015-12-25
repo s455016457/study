@@ -41,7 +41,12 @@
             display: true,
             url: "Home/Detail",
             iconCls: 'icon-detail',
-            handler: function () { createDetailView(btnDetail.url); }
+            handler: function () { 
+                var row = $('#List').datagrid('getSelected');
+                if (row) {
+                    createView(btnDetail.url, row);
+                } else { $.messageBox3s('提示', '请选择要操作的记录'); }
+            }
         };
         var btnAdd = {
             text: 'Add',
@@ -49,7 +54,7 @@
             display: true,
             url: "Home/Create",
             iconCls: 'icon-add',
-            handler: function () { createAddView(btnAdd.url); }
+            handler: function () { createView(btnAdd.url); }
         };
         var btnEdit = {
             text: 'Edit',
@@ -57,7 +62,12 @@
             display: true,
             url: "Home/Edit",
             iconCls: 'icon-edit',
-            handler: function () { createEditView(btnEdit.url); }
+            handler: function () { 
+                var row = $('#List').datagrid('getSelected');
+                if (row) {
+                    createView(btnEdit.url, row);
+                } else { $.messageBox3s('提示', '请选择要操作的记录'); }
+            }
         };
         var btnRemove = {
             text: 'Remove',
@@ -91,33 +101,23 @@
             });
         });
 
-        function createAddView(url) {
-            if (!url) {
-                url = "Error/UrlIsInvalid";
-            }
-            $("#modalwindow").load(url);
+        function Load(url) {
+            $.messager.progress({ title: '温馨提示', msg: '页面加载中，请稍候。。。', interval: 50 });
+            setTimeout(function () {
+                $("#modalwindow").load(url, function () {
+                    $.messager.progress('close');
+                });
+            }, 500);
         }
 
-        function createEditView(url) {
+        function createView(url, param) {
             if (!url) {
                 url = "Error/UrlIsInvalid";
             }
-            var row = $('#List').datagrid('getSelected');
-            if (row != null) {
-                url += "?" + $.param(row);
-                $("#modalwindow").load(url);
-            } else { $.messageBox3s('提示', '请选择要操作的记录'); }
-        }
-
-        function createDetailView(url) {
-            if (!url) {
-                url = "Error/UrlIsInvalid";
+            if (param) {
+                url += "?" + $.param(param);
             }
-            var row = $('#List').datagrid('getSelected');
-            if (row != null) {
-                url += "?" + $.param(row);
-                $("#modalwindow").load(url);
-            } else { $.messageBox3s('提示', '请选择要操作的记录'); }
+            Load(url);
         }
 
         function createSearchView(url) {
@@ -136,8 +136,6 @@
                         var callService = function () {
                             if (i < rows.length) {
                                 var row = rows[i++];
-                                console.log("--------------delete row---------");
-                                console.log(row);
                                 $.post("/SysSample/Delete?id=" + row.Id, function (data) {
                                     callService();
                                 }, "json");

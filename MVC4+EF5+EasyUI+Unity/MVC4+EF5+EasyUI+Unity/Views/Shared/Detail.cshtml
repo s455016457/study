@@ -4,18 +4,29 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
-@*    @Styles.Render("~/Content/themes/css")
-    @Styles.Render("~/Content/themes/default/css")
-    <script src="@Url.Content("~/Scripts/EasyUi/jquery.min.js")" type="text/javascript"></script>
-    <script src="@Url.Content("~/Scripts/EasyUi/jquery.easyui.min.js")" type="text/javascript"></script>
-    <script src="@Url.Content("~/Scripts/EasyUi/locale/easyui-lang-zh_CN.js")" type="text/javascript"></script>*@
+    @if (Boolean.Parse(ViewData["isBrowserNewTab"].ToString()))
+    {
+        <link href="~/Content/main.css" rel="stylesheet" />
+        @Styles.Render("~/Content/themes/css")
+        @Styles.Render("~/Content/themes/default/css")
+        <script src="@Url.Content("~/Scripts/EasyUi/jquery.min.js")" type="text/javascript"></script>
+        <script src="@Url.Content("~/Scripts/EasyUi/jquery.easyui.min.js")" type="text/javascript"></script>
+        <script src="@Url.Content("~/Scripts/EasyUi/locale/easyui-lang-zh_CN.js")" type="text/javascript"></script>
+        <script src="~/Scripts/jquery.easyui.plus.js"></script>
+        <script src="~/Scripts/EasyUi/extend/juqery.easyui.dialog.extend.js"></script>
+    }
 </head>
 <body>
     <script type="text/javascript">
         var dialog = {};
+        var url = '@Request.RawUrl';
+        var isBrowserNewTab = '@ViewData["isBrowserNewTab"].ToString()';
+        isBrowserNewTab = isBrowserNewTab.toLowerCase() == 'true';
         dialog.opgions = {
             title: '详细信息',
             iconCls: 'icon-edit',
+            url: url,
+            maximized: isBrowserNewTab,
             onAdd: function () { },
             onEdit: function () { },
             onRemove: function () { },
@@ -33,13 +44,14 @@
                 }
             }, {
                 iconCls: 'icon-remove',
-                text: 'remove',
+                text: '删除',
                 handler: function () {
                     $("#detailView").dialog("options").onRemove.call($("#detailView"));
                 }
             }]
         };
     </script>
+
     <div id="detailView">
         @RenderBody()
     </div>

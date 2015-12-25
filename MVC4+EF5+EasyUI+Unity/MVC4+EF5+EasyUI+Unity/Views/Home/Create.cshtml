@@ -3,7 +3,7 @@
 @using App.Models;
 
 @{
-    ViewBag.Title = "创建";
+    ViewBag.Title = "新增";
     Layout = "~/Views/Shared/Create.cshtml";
 }
 
@@ -97,29 +97,30 @@
 <script type="text/javascript">
     $(function () {
         $.extend(dialog.opgions, {
-            onSave: function () { $.messager.alert('温馨提示', 'Save!save url:Home/Create?data=data'); },
-            onAdd: function () { $.messager.alert('温馨提示', 'Add!add url:Home/Create'); },
-            url: 'Home/Create'
+            onSave: Save
         });
 
-        $("#btnSave").click(function () {
-
-            $.ajax({
-                url: "/Home/Create",
-                type: "Post",
-                data: $("#CreateForm").serialize(),
-                dataType: "json",
-                success: function (data) {
-                    if (data == 1) {
-                        window.parent.frameReturnByMes("成功");
-                        window.parent.frameReturnByReload(true);
-                        window.parent.frameReturnByClose()
-                    }
-                    else {
-                        window.parent.frameReturnByMes("失败");
-                    }
-                }
-            });
+        $("#EditForm").form({
+            url: "Home/Create"
         });
     });
+
+    function Save() {
+        $('#CreateForm').form('submit', {
+            success: function (data) {
+                if (data) {
+                    if (data.ret) {
+                        $.messager.alert('温馨提示', '新增成功！', function () {
+                            //跳转到Detail界面，待处理
+                            console.log(data.data);
+                        });
+                    } else if (data.messager) {
+                        $.messager.alert('温馨提示', data.messager);
+                    }
+                } else {
+                    $.messager.alert('温馨提示', '新增失败！');
+                }
+            }
+        });
+    }
 </script>

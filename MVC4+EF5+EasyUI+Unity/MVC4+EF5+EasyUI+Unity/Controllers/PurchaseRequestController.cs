@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace MVC4_EF5_EasyUI_Unity.Controllers
 {
-    public class PurchaseRequestController : Controller
+    public class PurchaseRequestController : BaseContorller
     {
         //
         // GET: /PurchaseRequest/

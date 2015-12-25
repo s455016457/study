@@ -3,7 +3,7 @@
 @using App.Models;
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "编辑";
     Layout = "~/Views/Shared/Edit.cshtml";
 }
 
@@ -96,12 +96,43 @@
 
 <script type="text/javascript">
     $(function () {
-        $.extend(dialog.opgions, {
-            onSave: function () { $.messager.alert('温馨提示', 'Save!save url:Home/Update?data=data'); },
-            onAdd: function () { $.messager.alert('温馨提示', 'Add!add url:Home/Create'); },
-            onRemove: function () { $.messager.alert('温馨提示', 'Remove!remove url:Home/Remove?data=data'); },
-            url: 'Home/Edit'
+        $("#EditForm").form({
+            url: "Home/Edit"
         });
-        
+        $.extend(dialog.opgions, {
+            onSave: Save,
+            onAdd: RedirectAddView,
+            onRemove: function () { $.messager.alert('温馨提示', 'Remove!remove url:Home/Remove?data=data'); },
+            onDetail: RedirectDetailView,
+        });
     });
+
+    function Save() {
+        $('#EditForm').form('submit', {
+            success: function (data) {
+                if (data)
+                    $.messager.alert('温馨提示', '更新成功！');
+                else
+                    $.messager.alert('温馨提示', '更新失败！');
+            }
+        });
+    }
+
+    function RedirectAddView() {
+        if (isBrowserNewTab) {
+            window.location.href = "../Home/Create?isBrowserNewTab=True";
+        } else {
+            $("#editView").dialog('close');
+            createView('Home/Create');
+        }
+    }
+
+    function RedirectDetailView() {
+        if (isBrowserNewTab) {
+            window.location.href = "../Home/Detail?isBrowserNewTab=True";
+        } else {
+            $("#editView").dialog('close');
+            createView('Home/Detail');
+        }
+    }
 </script>

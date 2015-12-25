@@ -1,6 +1,6 @@
 ﻿using App.Common;
 using Microsoft.Practices.Unity;
-using MVC4_EF5_EasyUI_Unity.App_Start;
+using MVC4_EF5_EasyUI_Unity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,11 +33,11 @@ namespace MVC4_EF5_EasyUI_Unity.Controllers
         {
             if (bal.Create(model))
             {
-                return Json(1, JsonRequestBehavior.AllowGet);
+                return ResultSuccessJson(model);
             }
             else
             {
-                return Json(0, JsonRequestBehavior.AllowGet);
+                return ResultErrorJson(model);
             }
 
         }
@@ -49,16 +49,14 @@ namespace MVC4_EF5_EasyUI_Unity.Controllers
         }
 
         #region 更新
-        public ActionResult Edit()
+        public ActionResult Edit(string Id)
         {
-            return View();
+            return View(bal.GetById(Id));
         }
 
         [HttpPost]
         public JsonResult Edit(App.Models.SysSample model)
         {
-
-
             if (bal.Edit(model))
             {
                 return Json(1, JsonRequestBehavior.AllowGet);

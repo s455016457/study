@@ -7,9 +7,27 @@
 
 <script type="text/javascript">
     //btnSearch.url = "Home/Search";
-    btnDetail.url = "Home/Detail";
     btnAdd.url = "Home/Create";
-    btnEdit.url = "Home/Edit";
+    $.extend(btnDetail, {
+        url: "Home/Detail",
+        handler: function () {
+            var row = $('#List').datagrid('getSelected');
+            if (row) {
+                createView(btnDetail.url, { Id: row["Id"] });
+            } else { $.messageBox3s('提示', '请选择要操作的记录'); }
+        }
+    });
+
+    $.extend(btnEdit, {
+        url: "Home/Edit",
+        handler: function () {
+            var row = $('#List').datagrid('getSelected');
+            if (row) {
+                createView(btnEdit.url, { Id: row["Id"] });
+            } else { $.messageBox3s('提示', '请选择要操作的记录'); }
+        }
+    });
+
     $(function () {
         $.extend(dataGrid.options, {
             url: 'Home/GetList',
