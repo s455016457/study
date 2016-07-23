@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @if (Boolean.Parse(ViewData["isBrowserNewTab"].ToString()))
+    {
+        <link href="~/Content/main.css" rel="stylesheet" />
+        @Styles.Render("~/Content/themes/css")
+        @Styles.Render("~/Content/themes/default/css")
+        <script src="@Url.Content("~/Scripts/EasyUi/jquery.min.js")" type="text/javascript"></script>
+        <script src="@Url.Content("~/Scripts/EasyUi/jquery.easyui.min.js")" type="text/javascript"></script>
+        <script src="@Url.Content("~/Scripts/EasyUi/locale/easyui-lang-zh_CN.js")" type="text/javascript"></script>
+        <script src="~/Scripts/jquery.easyui.plus.js"></script>
+        <script src="~/Scripts/EasyUi/extend/juqery.easyui.dialog.extend.js"></script>
+    }
+</head>
+<body >
+    <script type="text/javascript">
+        var url = '@Request.RawUrl';
+        var isBrowserNewTab = '@ViewData["isBrowserNewTab"].ToString()';
+        isBrowserNewTab = isBrowserNewTab.toLowerCase() == 'true';
+        var dialog = {};
+        dialog.opgions = {
+            title: '新增',
+            iconCls: 'icon-add',
+            url: url,
+            maximized: isBrowserNewTab,
+            onSave: function () { },
+            onSaveAndAdd: function () { },
+            toolbar: [{
+                iconCls: 'icon-save',
+                text: '保存',
+                handler: function () {
+                    $("#addView").dialog("options").onSave.call($("#addView"));
+                }
+            }, {
+                iconCls: 'icon-save',
+                text: '保存并新增',
+                handler: function () {
+                    $("#addView").dialog("options").onSaveAndAdd.call($("#addView"));
+                }
+            }]
+        };
+    </script>
+
+    <div id="addView">
+        @RenderBody()
+    </div>
+<script type="text/javascript">
+    $(function () {
+        $("#addView").dialog(dialog.opgions).dialog('open');
+    });
+</script>
+</body>
+</html>

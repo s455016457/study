@@ -1,0 +1,49 @@
+﻿@model List<App.Models.SysSample>
+
+@{
+    ViewBag.Title = "桌面";
+    Layout = "~/Views/Shared/Index.cshtml";  
+}
+
+<script type="text/javascript">
+    //btnSearch.url = "Home/Search";
+    btnAdd.url = "Home/Create";
+    $.extend(btnDetail, {
+        url: "Home/Detail",
+        handler: function () {
+            var row = $('#List').datagrid('getSelected');
+            if (row) {
+                createView(btnDetail.url, { Id: row["Id"] });
+            } else { $.messageBox3s('提示', '请选择要操作的记录'); }
+        }
+    });
+
+    $.extend(btnEdit, {
+        url: "Home/Edit",
+        handler: function () {
+            var row = $('#List').datagrid('getSelected');
+            if (row) {
+                createView(btnEdit.url, { Id: row["Id"] });
+            } else { $.messageBox3s('提示', '请选择要操作的记录'); }
+        }
+    });
+
+    $(function () {
+        $.extend(dataGrid.options, {
+            url: 'Home/GetList',
+            idField: 'Id',
+            sortName: 'Id',
+            sortOrder: 'desc',
+            columns: [[
+                { field: 'Id', title: 'ID', width: 80, sortable: true },
+                { field: 'Name', title: '名称', width: 120, sortable: true },
+                { field: 'Age', title: '年龄', width: 80, align: 'right', sortable: true },
+                { field: 'Bir', title: '生日', width: 80, align: 'right', sortable: true },
+                { field: 'Photo', title: '照片', width: 250, sortable: true },
+                { field: 'Note', title: '说明', width: 60, align: 'center', sortable: false },
+                { field: 'CreateTime', title: '创建时间', width: 120, align: 'center', sortable: true }
+            ]]
+        });
+        $('#List').datagrid(dataGrid.options);
+    });
+</script>

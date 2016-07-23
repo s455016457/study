@@ -1,0 +1,161 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>主界面</title>
+    <link href="~/Content/main.css" rel="stylesheet" />
+    @Styles.Render("~/Content/themes/css")
+    @Styles.Render("~/Content/themes/default/css")
+    <script src="@Url.Content("~/Scripts/EasyUi/jquery.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/EasyUi/jquery.easyui.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/EasyUi/locale/easyui-lang-zh_CN.js")" type="text/javascript"></script>
+    <script src="~/Scripts/jquery.easyui.plus.js"></script>
+    <script src="~/Scripts/EasyUi/extend/juqery.easyui.dialog.extend.js"></script>
+</head>
+<body class="easyui-layout">
+    <script type="text/javascript">
+        var dataGrid = {};
+        dataGrid.options = {
+            methord: 'post',
+            fit: true,
+            border: true,
+            fitColumns: true,
+            pageSize: 20,
+            pageList: [15, 20, 30, 50, 100],
+            pagination: true,
+            remoteSort: true,
+            striped: true, //奇偶行是否区分
+            singleSelect: false,//单选模式
+            rownumbers: true//行号
+        };
+
+        var btnSearch = {
+            text: 'Search',
+            iconCls: 'icon-search',
+            disabled: false,
+            display: true,
+            handler: function () { createSearchView(btnSearch.url); }
+        };
+        var btnDetail = {
+            text: 'Detail',
+            disabled: false,
+            display: true,
+            url: "Home/Detail",
+            iconCls: 'icon-detail',
+            handler: function () { 
+                var row = $('#List').datagrid('getSelected');
+                if (row) {
+                    createView(btnDetail.url, row);
+                } else { $.messageBox3s('提示', '请选择要操作的记录'); }
+            }
+        };
+        var btnAdd = {
+            text: 'Add',
+            disabled: false,
+            display: true,
+            url: "Home/Create",
+            iconCls: 'icon-add',
+            handler: function () { createView(btnAdd.url); }
+        };
+        var btnEdit = {
+            text: 'Edit',
+            disabled: false,
+            display: true,
+            url: "Home/Edit",
+            iconCls: 'icon-edit',
+            handler: function () { 
+                var row = $('#List').datagrid('getSelected');
+                if (row) {
+                    createView(btnEdit.url, row);
+                } else { $.messageBox3s('提示', '请选择要操作的记录'); }
+            }
+        };
+        var btnRemove = {
+            text: 'Remove',
+            disabled: false,
+            display: true,
+            iconCls: 'icon-remove',
+            handler: function () { deleteSelected(); }
+        };
+        var btnExport = {
+            text: 'Export',
+            disabled: false,
+            display: true,
+            iconCls: 'icon-export',
+            handler: function () { alert('Export') }
+        };
+        var btnReload = {
+            text: 'Reload',
+            disabled: false,
+            display: true,
+            iconCls: 'icon-reload',
+            handler: function () { reload(); }
+        };
+        var array = [btnSearch, btnDetail, btnAdd, btnEdit, btnRemove, btnExport, btnReload];
+
+        $(function () {
+            dataGrid.options.toolbar = [];
+            $(array).each(function (i) {
+                if (this.display) {
+                    dataGrid.options.toolbar.push(this);
+                }
+            });
+        });
+
+        function Load(url) {
+            $.messager.progress({ title: '温馨提示', msg: '页面加载中，请稍候。。。', interval: 50 });
+            setTimeout(function () {
+                $("#modalwindow").load(url, function () {
+                    $.messager.progress('close');
+                });
+            }, 500);
+        }
+
+        function createView(url, param) {
+            if (!url) {
+                url = "Error/UrlIsInvalid";
+            }
+            if (param) {
+                url += "?" + $.param(param);
+            }
+            Load(url);
+        }
+
+        function createSearchView(url) {
+            if (!url) {
+                url = "Error/UrlIsInvalid";
+            }
+            $("#modalwindow").load(url);
+        }
+
+        function deleteSelected() {
+            var rows = $('#List').datagrid('getSelections');
+            if (rows != null && rows.length > 0) {
+                $.messager.confirm('提示', '确定删除选择项？', function (r) {
+                    if (r) {
+                        var i = 0;
+                        var callService = function () {
+                            if (i < rows.length) {
+                                var row = rows[i++];
+                                $.post("/SysSample/Delete?id=" + row.Id, function (data) {
+                                    callService();
+                                }, "json");
+                            } else {
+                                $("#List").datagrid('load');
+                            }
+                        }
+                        callService();
+                    }
+                });
+            } else { $.messageBox3s('提示', '请选择要操作的记录'); }
+        }
+
+        function reload() {
+            $("#List").datagrid('load');
+        }
+    </script>
+        <div id="modalwindow" style="display:none"></div>
+        <div id="searchwindow"></div>
+        <table id="List"></table>
+        @RenderBody()
+</body>
+</html>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="bc320eb30337424b812f69d8ca381e6e" Name="关系图1" ZoomLevel="100" >
+        <EntityTypeShape EntityType="DB.SysSample" Width="1.5" PointX="5.375" PointY="0.5" />
+        <EntityTypeShape EntityType="DB.Menu" Width="1.5" PointX="2.3968567617222933" PointY="5.8668968108794175" />
+        <EntityTypeShape EntityType="DB.MenuGroup" Width="1.5" PointX="1.2166391467753051" PointY="18.310686641517414" />
+        <EntityTypeShape EntityType="DB.SysFunction" Width="1.5" PointX="9.03556486639919" PointY="0.41462264974351165" />
+        <EntityTypeShape EntityType="DB.SysLog" Width="1.5" PointX="1.6716397300696186" PointY="17.889531650529026" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

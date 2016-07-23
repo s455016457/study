@@ -1,0 +1,26 @@
+﻿@Model
+@{
+    ViewBag.Title = "详细信息";
+    Layout = "~/Views/Shared/Detail.cshtml";
+}
+
+<h2>Detail</h2>
+<div>isBrowserNewTab: @ViewData["isBrowserNewTab"].ToString()</div>
+<script type="text/javascript">
+    $(function () {
+        $.extend(dialog.opgions, {
+            onAdd: RedirectAddView,
+            onEdit: function () { $.messager.alert('温馨提示', 'Edit!edit url:Home/Edit?data=data'); },
+            onRemove: function () { $.messager.alert('温馨提示', 'Remove!remove url:Home/Remove?data=data'); }
+        });
+
+        function RedirectAddView() {
+            if (isBrowserNewTab) {
+                window.location.href = "../Home/Create?isBrowserNewTab=True";
+            } else {
+                $("#detailView").dialog('close');
+                createView('Home/Create');
+            }
+        }
+    });
+</script>

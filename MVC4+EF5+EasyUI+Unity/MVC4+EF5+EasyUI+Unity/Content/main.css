@@ -1,0 +1,137 @@
+﻿body {
+    background-color: #f3f3f7;
+    font-size: 12px;
+    font-family: Arial, tahoma,Verdana;
+}
+input{
+    width: 150px;
+}
+
+.define-logo {
+    background-color: rgba(149, 184, 230, 0.57)
+}
+/***明细界面按钮组样式定义**/
+.tools-btn {
+    background-color: rgba(149, 184, 230, 0.57);
+}
+
+/* 明细table样式定义 */
+table.detail {
+    font-family: Verdana, tahoma, sans-serif;
+    font-size: 13px;
+    border-collapse: collapse;
+    margin: 0;
+    width: 100%;
+    vertical-align: middle;
+    text-align: left;
+    border-spacing: inherit;
+}
+
+    table.detail tr th {
+        padding: 2px;
+        height: 28px;
+        border-bottom:1px dashed #B4B4B4;
+        /*border: solid 1px #B4B4B4;*/
+        border-collapse: collapse;
+    }
+
+    table.detail tr td {
+        padding: 2px;
+        height: 28px;
+        border-bottom:1px dashed #B4B4B4;
+        /*border: solid 1px #B4B4B4;*/
+        border-collapse: collapse;
+    }
+
+td.title {
+    text-align: left;
+    color: #336699;
+    vertical-align: middle;
+    white-space: nowrap;
+    width: 80px;
+    font-weight: bold;
+}
+
+    td.title img {
+        vertical-align: bottom;
+        padding-right: 2px;
+    }
+
+td.data {
+    text-align: left;
+    vertical-align: middle;
+    width: 152px;
+}
+
+    td.data input, td.data select {
+        border: 1px solid #999999;
+        font-family: "Arial", "Helvetica", "sans-serif";
+        font-size: 12px;
+        color: #000000;
+        text-decoration: none;
+        vertical-align: middle;
+        margin-top: 0px;
+        width: 150px;
+    }
+
+tr.separator hr {
+    background-color: #D3D3D3;
+    border: medium none;
+    color: #D3D3D3;
+    height: 1px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 0;
+}
+
+
+.ioc-menu-setting {
+    background:url('Images/setting.png') no-repeat center center;
+}
+.ioc-menu-myjob {
+    background:url('Images/myjob.png') no-repeat center center;
+}
+.ioc-menu-function {
+    background:url('Images/function.png') no-repeat center center;
+}
+.ioc-menu-report {
+    background:url('Images/chart_pie.png') no-repeat center center;
+}
+.ioc-menu-costing {
+    background:url('Images/chart_curve.png') no-repeat center center;
+}
+.ioc-menu-oa {
+    background:url('Images/folder_page.png') no-repeat center center;
+}
+.ioc-menu-faccount {
+    background:url('Images/calculator.png') no-repeat center center;
+}
+.ioc-menu-maccount {
+    background:url('Images/calendar_view_week.png') no-repeat center center;
+}
+.ioc-menu-supplychain {
+    background:url('Images/world_link.png') no-repeat center center;
+}
+.ioc-menu-production {
+    background:url('Images/package.png') no-repeat center center;
+}
+.ioc-menu-email_edit {
+    background:url('Images/email_edit.png') no-repeat center center;
+}
+.ioc-menu-email {
+    background:url('Images/email.png') no-repeat center center;
+}
+.ioc-menu-approve {
+    background:url('Images/joystick.png') no-repeat center center;
+}
+.ioc-menu-document {
+    background:url('Images/clipboard-list.png') no-repeat center center;
+}
+.icon-pop{
+	background:url('Images/pop.png') no-repeat center center;
+}
+
+
+.shade-show{ display: block;  position: absolute;  top: 0%;  left: 0%;  width: 100%;  height: 100%;  background-color: black;  z-index:1001;  -moz-opacity: 0.2;  opacity:.20;  filter: alpha(opacity=20);}
+
+.shade-hide{ display: none;  position: absolute;  top: 0%;  left: 0%;  width: 100%;  height: 100%;  background-color: black;  z-index:1001;  -moz-opacity: 0.2;  opacity:.20;  filter: alpha(opacity=20);}
