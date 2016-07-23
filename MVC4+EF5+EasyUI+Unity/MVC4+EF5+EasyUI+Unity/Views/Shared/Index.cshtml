@@ -29,14 +29,14 @@
         };
 
         var btnSearch = {
-            text: 'Search',
+            text: '查询',
             iconCls: 'icon-search',
             disabled: false,
             display: true,
             handler: function () { createSearchView(btnSearch.url); }
         };
         var btnDetail = {
-            text: 'Detail',
+            text: '详情',
             disabled: false,
             display: true,
             url: "Home/Detail",
@@ -49,7 +49,7 @@
             }
         };
         var btnAdd = {
-            text: 'Add',
+            text: '新增',
             disabled: false,
             display: true,
             url: "Home/Create",
@@ -57,7 +57,7 @@
             handler: function () { createView(btnAdd.url); }
         };
         var btnEdit = {
-            text: 'Edit',
+            text: '更新',
             disabled: false,
             display: true,
             url: "Home/Edit",
@@ -70,21 +70,21 @@
             }
         };
         var btnRemove = {
-            text: 'Remove',
+            text: '删除',
             disabled: false,
             display: true,
             iconCls: 'icon-remove',
             handler: function () { deleteSelected(); }
         };
         var btnExport = {
-            text: 'Export',
+            text: '导出',
             disabled: false,
             display: true,
             iconCls: 'icon-export',
             handler: function () { alert('Export') }
         };
         var btnReload = {
-            text: 'Reload',
+            text: '刷新',
             disabled: false,
             display: true,
             iconCls: 'icon-reload',
