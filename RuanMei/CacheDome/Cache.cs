@@ -10,7 +10,7 @@ namespace CacheDome
     public class Cache:ICache
     {
         private static MemoryCache cache;
-        public static Cache()
+        static Cache()
         {
             cache = MemoryCache.Default;
         } 

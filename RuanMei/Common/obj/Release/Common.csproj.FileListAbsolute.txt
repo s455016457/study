@@ -1,0 +1,4 @@
+E:\study\VistorPattern\Common\bin\Release\Common.dll
+E:\study\VistorPattern\Common\bin\Release\Common.pdb
+E:\study\VistorPattern\Common\obj\Release\Common.dll
+E:\study\VistorPattern\Common\obj\Release\Common.pdb
