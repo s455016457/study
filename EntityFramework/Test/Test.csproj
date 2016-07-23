@@ -64,6 +64,10 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\StudyEntityFramework2\StudyEntityFramework2.csproj">
+      <Project>{84cf3f9b-4977-48ab-b6b9-4f02e44eeeea}</Project>
+      <Name>StudyEntityFramework2</Name>
+    </ProjectReference>
     <ProjectReference Include="..\StudyEntityFramework\StudyEntityFramework.csproj">
       <Project>{fcf1d9ae-512b-4d54-b3d6-d5266680c839}</Project>
       <Name>StudyEntityFramework</Name>

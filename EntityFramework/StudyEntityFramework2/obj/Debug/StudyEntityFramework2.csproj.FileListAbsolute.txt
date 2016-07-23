@@ -1,0 +1,16 @@
+H:\MyProjects\study\EntityFramework\StudyEntityFramework2\obj\Debug\StudyEntityFramework2.csprojResolveAssemblyReference.cache
+H:\MyProjects\study\EntityFramework\StudyEntityFramework2\bin\Debug\StudyEntityFramework2.dll.config
+H:\MyProjects\study\EntityFramework\StudyEntityFramework2\bin\Debug\StudyEntityFramework2.dll
+H:\MyProjects\study\EntityFramework\StudyEntityFramework2\bin\Debug\StudyEntityFramework2.pdb
+H:\MyProjects\study\EntityFramework\StudyEntityFramework2\bin\Debug\EntityFramework.dll
+H:\MyProjects\study\EntityFramework\StudyEntityFramework2\bin\Debug\EntityFramework.SqlServer.dll
+H:\MyProjects\study\EntityFramework\StudyEntityFramework2\bin\Debug\EntityFramework.xml
+H:\MyProjects\study\EntityFramework\StudyEntityFramework2\bin\Debug\EntityFramework.SqlServer.xml
+H:\MyProjects\study\EntityFramework\StudyEntityFramework2\bin\Debug\zh-Hans\EntityFramework.resources.dll
+H:\MyProjects\study\EntityFramework\StudyEntityFramework2\bin\Debug\zh-Hans\EntityFramework.SqlServer.resources.dll
+H:\MyProjects\study\EntityFramework\StudyEntityFramework2\obj\Debug\StudyEntityFramework2.dll
+H:\MyProjects\study\EntityFramework\StudyEntityFramework2\obj\Debug\StudyEntityFramework2.pdb
+H:\MyProjects\study\EntityFramework\StudyEntityFramework2\obj\Debug\StudyEntityFramework2.Migrations.AddUrl.resources
+H:\MyProjects\study\EntityFramework\StudyEntityFramework2\obj\Debug\StudyEntityFramework2.csproj.GenerateResource.Cache
+H:\MyProjects\study\EntityFramework\StudyEntityFramework2\obj\Debug\StudyEntityFramework2.Migrations.AddUser.resources
+H:\MyProjects\study\EntityFramework\StudyEntityFramework2\obj\Debug\StudyEntityFramework2.Migrations.ChangDisplayName.resources
