@@ -6,3 +6,11 @@ H:\MyProjects\study\双色球\双色球\obj\Debug\双色球.Properties.Resources
 H:\MyProjects\study\双色球\双色球\obj\Debug\双色球.csproj.GenerateResource.Cache
 H:\MyProjects\study\双色球\双色球\obj\Debug\双色球.exe
 H:\MyProjects\study\双色球\双色球\obj\Debug\双色球.pdb
+E:\study\双色球\双色球\bin\Debug\双色球.exe.config
+E:\study\双色球\双色球\bin\Debug\双色球.exe
+E:\study\双色球\双色球\bin\Debug\双色球.pdb
+E:\study\双色球\双色球\obj\Debug\双色球.Form1.resources
+E:\study\双色球\双色球\obj\Debug\双色球.Properties.Resources.resources
+E:\study\双色球\双色球\obj\Debug\双色球.csproj.GenerateResource.Cache
+E:\study\双色球\双色球\obj\Debug\双色球.exe
+E:\study\双色球\双色球\obj\Debug\双色球.pdb

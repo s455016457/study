@@ -33,7 +33,6 @@ namespace 双色球
         {
             Begin.Text = "开始...";
             Begin.Enabled = false;
-            End.Enabled = true;
             start = true;
             List<Task> listTask = new List<Task>();
             TaskFactory tskf = new TaskFactory();
@@ -47,18 +46,19 @@ namespace 双色球
                 var label = control as Label;
                 listTask.Add(tskf.StartNew(new Action(() =>
                 {
-                    Thread.Sleep(1000);
                     while (start)
                     {
+                        Thread.Sleep(200);
                         var text = GeNum(label);
                         UpdateLabl(label, text);
-                        Console.WriteLine("label:[{0}],value:[{1}]", label.Name, text);
+                        //Console.WriteLine("label:[{0}],value:[{1}]", label.Name, text);
                     }
-                    Task.WaitAll(listTask.ToArray());
-                    //MessageBox.Show("结束了。。。", "结果");
-                    ShowMessage();
                 })));
             }
+            tskf.ContinueWhenAll(listTask.ToArray(), (rest) => { ShowMessage(); });
+            //MessageBox.Show("主线程结束了。。。", "结果");
+            Thread.Sleep(1000);
+            End.Enabled = true;
         }
 
         private void End_Click(object sender, EventArgs e)
@@ -72,7 +72,7 @@ namespace 双色球
         private void ShowMessage()
         {
             StringBuilder sb = new StringBuilder();
-            sb.AppendFormat("{0},{1},{2},{3},{4},{5},{6}", GetPanleNums().ToArray());
+            sb.AppendFormat("{6},{5},{4},{3},{2},{1},{0}", GetPanleNums().ToArray());
             MessageBox.Show(sb.ToString(), "结果");
         }
 
@@ -80,8 +80,9 @@ namespace 双色球
         {
             List<String> list = new List<string>();
             var controls = groupBox.Controls;
-            foreach (var control in controls)
+            for (int i = 0; i < controls.Count;i++ )
             {
+                var control = controls[i];
                 if (control.GetType() != typeof(Label))
                 {
                     continue;
