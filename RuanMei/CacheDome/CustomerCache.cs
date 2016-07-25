@@ -9,7 +9,7 @@ namespace CacheDome
     /// <summary>
     /// 缓存是在内存在开辟了个空间存放了静态的字典集合
     /// </summary>
-    public class CustomerCache :ICache
+    public class CustomerCache :CacheBase
     {
         private static CustomerCache customerCache;
         private CustomerCache()
@@ -22,7 +22,7 @@ namespace CacheDome
 
         private static Object lock_obj = new object();
 
-        public static CustomerCache Create()
+        public static ICache Create()
         {
             if (customerCache == null)
             {
@@ -37,11 +37,9 @@ namespace CacheDome
             return customerCache;
         }
 
-        
-
         private static Dictionary<String, KeyValuePair<object, DateTime>> DATA = new Dictionary<string, KeyValuePair<object, DateTime>>();
         
-        public T Get<T>(string Key)
+        public override T Get<T>(string Key)
         {
             if (!this.Contains(Key)) return default(T);
 
@@ -54,7 +52,7 @@ namespace CacheDome
             return (T)keyValue.Key;
         }
 
-        public Object Get(string Key)
+        public override Object Get(string Key)
         {
             if (!this.Contains(Key)) return null;
 
@@ -67,35 +65,42 @@ namespace CacheDome
             return keyValue.Key;
         }
 
-        public Boolean Contains(String Key)
+        public override Boolean Contains(String Key)
         {
             return DATA.ContainsKey(Key);
         }
 
-        public void Add(string Key, object Value, int CacheTime = 3000)
+        public override void Add(string Key, object Value, int CacheTime = 3000)
         {
-            this.Remove(Key);
-            DATA.Add(Key, new KeyValuePair<object, DateTime>(Value, DateTime.Now.AddMinutes(CacheTime)));
+            lock (lock_obj)
+            {
+                this.Remove(Key);
+                DATA.Add(Key, new KeyValuePair<object, DateTime>(Value, DateTime.Now.AddMinutes(CacheTime)));
+            }
         }
 
-        public void Add<T>(string Key, T Value, int CacheTime = 3000)
+       
+        public override void Add<T>(string Key, T Value, int CacheTime = 3000)
         {
-            this.Remove(Key);
-            DATA.Add(Key, new KeyValuePair<object, DateTime>(Value, DateTime.Now.AddMinutes(CacheTime)));
+            lock (lock_obj)
+            {
+                this.Remove(Key);
+                DATA.Add(Key, new KeyValuePair<object, DateTime>(Value, DateTime.Now.AddMinutes(CacheTime)));
+            }
         }
 
-        public void Remove(string Key)
+        public override void Remove(string Key)
         {
             if (this.Contains(Key))
                 DATA.Remove(Key);
         }
 
-        public void RemoveAll()
+        public override void RemoveAll()
         {
             DATA = new Dictionary<string, KeyValuePair<object, DateTime>>();
         }
 
-        public long Count()
+        public override long Count()
         {
             return DATA.Count;
         }

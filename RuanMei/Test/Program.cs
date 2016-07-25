@@ -13,8 +13,23 @@ namespace Test
         {
             Console.WriteLine("**************Begin测试SpeechSynthesizerHepler**************");
             TestBase test = ObjectFactory.CreatedObject<TestSpeech>();
-            test.Test();
+            //test.Test();
             Console.WriteLine("**************End测试SpeechSynthesizerHepler**************");
+
+            Console.WriteLine("**************Begin测试Singleton**************");
+            test = ObjectFactory.CreatedObject<TestSingleon>();
+            //test.Test();
+            Console.WriteLine("**************End测试Singleton**************");
+
+            Console.WriteLine("**************Begin测试Cache**************");
+            test = ObjectFactory.CreatedObject<TestCache>();
+            //test.Test();
+            Console.WriteLine("**************End测试Cache**************");
+
+            Console.WriteLine("**************Begin测试Emit**************");
+            test = ObjectFactory.CreatedObject<TestEmit>();
+            test.Test();
+            Console.WriteLine("**************End测试Cache**************");
 
 
             Console.Read();

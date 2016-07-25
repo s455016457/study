@@ -15,6 +15,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VistorPattern", "VistorPattern\VistorPattern.csproj", "{DDA03B5D-C4D7-46FE-AF5F-9B9AB062E57B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reptile", "Reptile\Reptile.csproj", "{1DAA9967-496F-453C-9E61-E32F53756BA3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Miscellaneous", "Miscellaneous\Miscellaneous.csproj", "{5199AF38-28D0-4454-895E-9411260F0471}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +53,14 @@ Global
 		{DDA03B5D-C4D7-46FE-AF5F-9B9AB062E57B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DDA03B5D-C4D7-46FE-AF5F-9B9AB062E57B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DDA03B5D-C4D7-46FE-AF5F-9B9AB062E57B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1DAA9967-496F-453C-9E61-E32F53756BA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DAA9967-496F-453C-9E61-E32F53756BA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DAA9967-496F-453C-9E61-E32F53756BA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DAA9967-496F-453C-9E61-E32F53756BA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5199AF38-28D0-4454-895E-9411260F0471}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5199AF38-28D0-4454-895E-9411260F0471}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5199AF38-28D0-4454-895E-9411260F0471}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5199AF38-28D0-4454-895E-9411260F0471}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

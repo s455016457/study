@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CacheDome
 {
-    public class Cache:ICache
+    public class Cache : CacheBase
     {
         private static MemoryCache cache;
         static Cache()
@@ -20,12 +20,12 @@ namespace CacheDome
         /// </summary>
         /// <param name="Key"></param>
         /// <returns></returns>
-        public bool Contains(string Key)
+        public override bool Contains(string Key)
         {
             return cache.Contains(Key);
         }
 
-        public T Get<T>(string Key)
+        public override T Get<T>(string Key)
         {
             var obj = this.Get(Key);
             var typeConverter = System.ComponentModel.TypeDescriptor.GetConverter(obj.GetType());
@@ -34,12 +34,12 @@ namespace CacheDome
             return default(T);
         }
 
-        public object Get(String Key)
+        public override object Get(String Key)
         {
             return cache.Get(Key);
         }
 
-        public void Add(string Key, object Value, int CacheTime = 3000)
+        public override void Add(string Key, object Value, int CacheTime = 3000)
         {
             var policy = new CacheItemPolicy();
             var cacheItem = new CacheItem(Key, Value);
@@ -47,7 +47,7 @@ namespace CacheDome
             cache.Add(cacheItem, policy);
         }
 
-        public void Add<T>(string Key, T Value, int CacheTime = 3000)
+        public override void Add<T>(string Key, T Value, int CacheTime = 3000)
         {
             var policy = new CacheItemPolicy();
             var cacheItem = new CacheItem(Key, Value);
@@ -55,18 +55,18 @@ namespace CacheDome
             cache.Add(cacheItem, policy);
         }
 
-        public void Remove(string Key)
+        public override void Remove(string Key)
         {
             if (this.Contains(Key))
                 cache.Remove(Key);
         }
 
-        public void RemoveAll()
+        public override void RemoveAll()
         {
             cache = MemoryCache.Default;
         }
 
-        public long Count()
+        public override long Count()
         {
             return cache.GetCount();
         }
@@ -77,6 +77,11 @@ namespace CacheDome
             {
                 return this.Get(key);
             }
+        }
+
+        public static ICache Create()
+        {
+            return new Cache();
         }
     }
 }
