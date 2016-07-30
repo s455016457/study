@@ -38,5 +38,23 @@ namespace Common
         {
             return File.ReadLines(path);
         }
+
+        public Boolean CopyFile(String SourcePath, String TargetPath)
+        {
+            if (!File.Exists(SourcePath))
+            {
+                throw new Exception("文件不存在");
+            }
+
+            if (!Directory.Exists(TargetPath))
+            {
+                Directory.CreateDirectory(TargetPath);
+            }
+            var fileName = Path.GetFileName(SourcePath);
+            var TargetPathChars = TargetPath.ToArray();
+            TargetPath = TargetPath + (TargetPathChars[TargetPathChars.Count()-1] == '/' || TargetPathChars[TargetPathChars.Count()-2] == '\\' ? fileName : "\\" + fileName);
+            File.Copy(SourcePath, TargetPath, true);
+            return true;
+        }
     }
 }

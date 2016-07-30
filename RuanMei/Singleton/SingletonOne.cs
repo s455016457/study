@@ -13,7 +13,7 @@ namespace Singleton
     {
         private SingletonOne()
         {
-            Console.WriteLine("SingletonOne，构造函数被调用一次");
+            Console.WriteLine("{0}，构造函数被调用一次", this.GetType().Name);
         }
         private static SingletonOne _Singleton = null;
 

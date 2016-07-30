@@ -18,7 +18,7 @@ namespace Test
 
             Console.WriteLine("**************Begin测试Singleton**************");
             test = ObjectFactory.CreatedObject<TestSingleon>();
-            //test.Test();
+            test.Test();
             Console.WriteLine("**************End测试Singleton**************");
 
             Console.WriteLine("**************Begin测试Cache**************");
@@ -28,8 +28,18 @@ namespace Test
 
             Console.WriteLine("**************Begin测试Emit**************");
             test = ObjectFactory.CreatedObject<TestEmit>();
-            test.Test();
+            //test.Test();
             Console.WriteLine("**************End测试Cache**************");
+
+            Console.WriteLine("**************Begin测试IOHelper**************");
+            test = ObjectFactory.CreatedObject<TestIOHelper>();
+            test.Test();
+            Console.WriteLine("**************End测试IOHelper**************");
+
+            Console.WriteLine("**************Begin测试IOHelper**************");
+            test = ObjectFactory.CreatedObject<TestFactory>();
+            test.Test();
+            Console.WriteLine("**************End测试IOHelper**************");
 
 
             Console.Read();

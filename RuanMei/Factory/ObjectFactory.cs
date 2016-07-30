@@ -63,5 +63,24 @@ namespace Factory
             }
             finally { }
         }
+
+        public static IEnumerable<Object> CreatedobjectByFullPath(String assemblyRef)
+        {
+            try
+            {
+                var assembly = Assembly.LoadFile(assemblyRef);
+                foreach (var type in assembly.GetTypes())
+                {
+                    if (type.IsClass)
+                    {
+                        //获取无参数的构造函数
+                        var contsturctor = type.GetConstructor(new Type[] { });
+                        if (type.IsAbstract || contsturctor == null) continue;
+                        yield return Activator.CreateInstance(type, true);
+                    }
+                }
+            }
+            finally { }
+        }
     }
 }

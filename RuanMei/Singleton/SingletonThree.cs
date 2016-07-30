@@ -10,12 +10,12 @@ namespace Singleton
     {
         private SingletonThree()
         {
-            Console.WriteLine("SingletonThree，构造函数被调用一次");
+            Console.WriteLine("{0}，构造函数被调用一次", this.GetType().Name);
         }
 
         /// <summary>
         /// 任何一个类，最多只有一个无参数的静态构造函数
-        /// 
+        /// 由CLR保证，在第一次使用类之前执行，而且仅执行一次
         /// </summary>
         static SingletonThree()
         {
