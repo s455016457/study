@@ -27,6 +27,7 @@ using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using StackExchange.Profiling;
 
 namespace MVC4_EF5_EasyUI_Unity
 {
@@ -58,6 +59,12 @@ namespace MVC4_EF5_EasyUI_Unity
             String logConfigUrl = HttpContext.Current.Server.MapPath("Log.config");
             FileInfo fileInfo = new FileInfo(logConfigUrl);
             LogHander.SetConfig(fileInfo);
+
+#if DEBUG
+            //采用MiniProfiler监控EF与.NET MVC 配置
+            //StackExchange.Profiling.
+            MiniProfilerEF.InitializeEF42();
+#endif
         }
 
         /// <summary>
@@ -90,6 +97,25 @@ namespace MVC4_EF5_EasyUI_Unity
                 //}
                 //catch { }
             }
+        }
+
+        protected void Application_BeginRequest()
+        {
+            if (Request.IsLocal)//这里是允许本地访问启动监控,可不写
+            {
+#if DEBUG
+                //采用MiniProfiler监控EF与.NET MVC 配置
+                MiniProfiler.Start();
+#endif
+            }
+        }
+
+        protected void Application_EndRequest()
+        {
+#if DEBUG
+            //采用MiniProfiler监控EF与.NET MVC 配置
+            MiniProfiler.Stop();
+#endif
         }
     }
 }

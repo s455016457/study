@@ -10,6 +10,7 @@
     <script src="@Url.Content("~/Scripts/EasyUi/locale/easyui-lang-zh_CN.js")" type="text/javascript"></script>
     <script src="~/Scripts/jquery.easyui.plus.js"></script>
     <script src="~/Scripts/EasyUi/extend/juqery.easyui.dialog.extend.js"></script>
+    @using StackExchange.Profiling;
 </head>
 <body class="easyui-layout">
     <script type="text/javascript">
@@ -157,5 +158,6 @@
         <div id="searchwindow"></div>
         <table id="List"></table>
         @RenderBody()
+        @MiniProfiler.RenderIncludes();
 </body>
 </html>
