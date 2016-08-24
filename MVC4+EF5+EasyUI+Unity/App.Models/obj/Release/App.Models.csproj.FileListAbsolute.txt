@@ -1,0 +1,4 @@
+E:\study\MVC4+EF5+EasyUI+Unity\App.Models\bin\Release\App.Models.dll
+E:\study\MVC4+EF5+EasyUI+Unity\App.Models\bin\Release\App.Models.pdb
+E:\study\MVC4+EF5+EasyUI+Unity\App.Models\obj\Release\App.Models.dll
+E:\study\MVC4+EF5+EasyUI+Unity\App.Models\obj\Release\App.Models.pdb

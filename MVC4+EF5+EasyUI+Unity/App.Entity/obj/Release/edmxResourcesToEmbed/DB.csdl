@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="DB" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+  <EntityContainer Name="DBContainer" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="SysSample" EntityType="DB.SysSample" />
+    <EntitySet Name="Menu" EntityType="DB.Menu" />
+    <EntitySet Name="MenuGroup" EntityType="DB.MenuGroup" />
+    <EntitySet Name="SysFunction" EntityType="DB.SysFunction" />
+    <EntitySet Name="SysLog" EntityType="DB.SysLog" />
+  </EntityContainer>
+  <EntityType Name="SysSample">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="String" Name="Id" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Name" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="Age" />
+    <Property Type="DateTime" Name="Bir" Precision="3" />
+    <Property Type="String" Name="Photo" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Note" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="CreateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Menu">
+    <Key>
+      <PropertyRef Name="Menu_Id" />
+    </Key>
+    <Property Type="String" Name="Menu_Id" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="MenuGroup_Id" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ModelId" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="EnglishName" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Url" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Iconic" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="Sort" />
+    <Property Type="String" Name="Remark" MaxLength="4000" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="State" />
+    <Property Type="String" Name="CreatePerson" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="CreateTime" Precision="3" />
+    <Property Type="String" Name="Version" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="MenuGroup">
+    <Key>
+      <PropertyRef Name="MenuGroup_Id" />
+    </Key>
+    <Property Type="String" Name="MenuGroup_Id" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="SysFunction_Id" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="EnglishName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Iconic" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="Sort" />
+    <Property Type="String" Name="Remark" MaxLength="4000" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="State" />
+    <Property Type="String" Name="CreatePerson" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="CreateTime" Precision="3" />
+    <Property Type="String" Name="Version" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SysFunction">
+    <Key>
+      <PropertyRef Name="SysFunction_Id" />
+    </Key>
+    <Property Type="String" Name="SysFunction_Id" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="EnglishName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Iconic" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="Sort" />
+    <Property Type="String" Name="Remark" MaxLength="4000" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="State" />
+    <Property Type="String" Name="CreatePerson" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="CreateTime" Precision="3" />
+    <Property Type="String" Name="Version" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SysLog">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="String" Name="Id" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Operator" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Message" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Result" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Type" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Module" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="CreateTime" Precision="3" />
+  </EntityType>
+</Schema>

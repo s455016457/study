@@ -1,0 +1,11 @@
+E:\study\MVC4+EF5+EasyUI+Unity\App.IDAL\bin\Release\App.IDAL.dll.config
+E:\study\MVC4+EF5+EasyUI+Unity\App.IDAL\bin\Release\App.IDAL.dll
+E:\study\MVC4+EF5+EasyUI+Unity\App.IDAL\bin\Release\App.IDAL.pdb
+E:\study\MVC4+EF5+EasyUI+Unity\App.IDAL\bin\Release\App.Entity.dll
+E:\study\MVC4+EF5+EasyUI+Unity\App.IDAL\bin\Release\EntityFramework.dll
+E:\study\MVC4+EF5+EasyUI+Unity\App.IDAL\bin\Release\App.Entity.pdb
+E:\study\MVC4+EF5+EasyUI+Unity\App.IDAL\bin\Release\EntityFramework.xml
+E:\study\MVC4+EF5+EasyUI+Unity\App.IDAL\bin\Release\zh-Hans\EntityFramework.resources.dll
+E:\study\MVC4+EF5+EasyUI+Unity\App.IDAL\obj\Release\App.IDAL.csprojResolveAssemblyReference.cache
+E:\study\MVC4+EF5+EasyUI+Unity\App.IDAL\obj\Release\App.IDAL.dll
+E:\study\MVC4+EF5+EasyUI+Unity\App.IDAL\obj\Release\App.IDAL.pdb

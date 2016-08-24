@@ -4,6 +4,8 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
+    <!-- 定义全局MiniProfiler监控  -->
+    @using StackExchange.Profiling;
     @if (Boolean.Parse(ViewData["isBrowserNewTab"].ToString()))
     {
         <link href="~/Content/main.css" rel="stylesheet" />
@@ -63,6 +65,11 @@
 
     <div id="editView">
         @RenderBody()
+        <!-- 定义MiniProfiler监控 -->
+        @if (Boolean.Parse(ViewData["isBrowserNewTab"].ToString()))
+        {
+            @MiniProfiler.RenderIncludes();
+        }
     </div>
     <script type="text/javascript">
         $(function () {

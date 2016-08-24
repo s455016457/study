@@ -62,7 +62,6 @@ namespace MVC4_EF5_EasyUI_Unity
 
 #if DEBUG
             //采用MiniProfiler监控EF与.NET MVC 配置
-            //StackExchange.Profiling.
             MiniProfilerEF.InitializeEF42();
 #endif
         }

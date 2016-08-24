@@ -88,7 +88,7 @@ namespace App.DAL
         {
             using (DBContainer db = new DBContainer())
             {
-                return db.SysSample.SingleOrDefault(p => p.Id.Equals(id));
+                return db.SysSample.FirstOrDefault(p => p.Id.Equals(id));
             }
         }
         /// <summary>
@@ -98,11 +98,10 @@ namespace App.DAL
         /// <returns></returns>
         public bool IsExist(string id)
         {
-            SysSample entity = GetById(id);
-            if (entity != null)
-                return true;
-            return false;
-
+            using (DBContainer db = new DBContainer())
+            {
+                return db.SysSample.Count(p => p.Id.Equals(id)) > 0;
+            }
         }
         /// <summary>
         /// 执行与释放或重置非托管资源相关的应用程序定义的任务。

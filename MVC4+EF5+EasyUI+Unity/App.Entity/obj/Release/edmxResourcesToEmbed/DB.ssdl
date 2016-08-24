@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DB.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="DBStoreContainer">
+    <EntitySet Name="Menu" EntityType="DB.Store.Menu" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MenuGroup" EntityType="DB.Store.MenuGroup" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SysFunction" EntityType="DB.Store.SysFunction" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SysLog" EntityType="DB.Store.SysLog" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SysSample" EntityType="DB.Store.SysSample" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="Menu">
+    <Key>
+      <PropertyRef Name="Menu_Id" />
+    </Key>
+    <Property Name="Menu_Id" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="MenuGroup_Id" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="ModelId" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="EnglishName" Type="varchar" MaxLength="200" />
+    <Property Name="Url" Type="varchar" MaxLength="200" />
+    <Property Name="Iconic" Type="varchar" MaxLength="200" />
+    <Property Name="Sort" Type="int" />
+    <Property Name="Remark" Type="varchar" MaxLength="4000" />
+    <Property Name="State" Type="bit" />
+    <Property Name="CreatePerson" Type="varchar" MaxLength="200" />
+    <Property Name="CreateTime" Type="datetime" />
+    <Property Name="Version" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="MenuGroup">
+    <Key>
+      <PropertyRef Name="MenuGroup_Id" />
+    </Key>
+    <Property Name="MenuGroup_Id" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="SysFunction_Id" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="EnglishName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Iconic" Type="varchar" MaxLength="50" />
+    <Property Name="Sort" Type="int" />
+    <Property Name="Remark" Type="varchar" MaxLength="4000" />
+    <Property Name="State" Type="bit" />
+    <Property Name="CreatePerson" Type="varchar" MaxLength="200" />
+    <Property Name="CreateTime" Type="datetime" />
+    <Property Name="Version" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="SysFunction">
+    <Key>
+      <PropertyRef Name="SysFunction_Id" />
+    </Key>
+    <Property Name="SysFunction_Id" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="EnglishName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Iconic" Type="varchar" MaxLength="50" />
+    <Property Name="Sort" Type="int" />
+    <Property Name="Remark" Type="varchar" MaxLength="4000" />
+    <Property Name="State" Type="bit" />
+    <Property Name="CreatePerson" Type="varchar" MaxLength="200" />
+    <Property Name="CreateTime" Type="datetime" />
+    <Property Name="Version" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="SysLog">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Operator" Type="varchar" MaxLength="50" />
+    <Property Name="Message" Type="varchar" MaxLength="500" />
+    <Property Name="Result" Type="varchar" MaxLength="20" />
+    <Property Name="Type" Type="varchar" MaxLength="20" />
+    <Property Name="Module" Type="varchar" MaxLength="20" />
+    <Property Name="CreateTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="SysSample">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="Age" Type="int" />
+    <Property Name="Bir" Type="datetime" />
+    <Property Name="Photo" Type="varchar" MaxLength="50" />
+    <Property Name="Note" Type="text" />
+    <Property Name="CreateTime" Type="datetime" />
+  </EntityType>
+</Schema>

@@ -1,0 +1,11 @@
+E:\study\MVC4+EF5+EasyUI+Unity\App.IBLL\bin\Release\App.IBLL.dll
+E:\study\MVC4+EF5+EasyUI+Unity\App.IBLL\bin\Release\App.IBLL.pdb
+E:\study\MVC4+EF5+EasyUI+Unity\App.IBLL\bin\Release\App.Common.dll
+E:\study\MVC4+EF5+EasyUI+Unity\App.IBLL\bin\Release\App.Models.dll
+E:\study\MVC4+EF5+EasyUI+Unity\App.IBLL\bin\Release\log4net.dll
+E:\study\MVC4+EF5+EasyUI+Unity\App.IBLL\bin\Release\App.Common.pdb
+E:\study\MVC4+EF5+EasyUI+Unity\App.IBLL\bin\Release\App.Models.pdb
+E:\study\MVC4+EF5+EasyUI+Unity\App.IBLL\bin\Release\log4net.xml
+E:\study\MVC4+EF5+EasyUI+Unity\App.IBLL\obj\Release\App.IBLL.csprojResolveAssemblyReference.cache
+E:\study\MVC4+EF5+EasyUI+Unity\App.IBLL\obj\Release\App.IBLL.dll
+E:\study\MVC4+EF5+EasyUI+Unity\App.IBLL\obj\Release\App.IBLL.pdb

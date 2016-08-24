@@ -71,25 +71,32 @@ namespace MVC4_EF5_EasyUI_Unity.Controllers
 
         public JsonResult GetList(GridPager pager)
         {
-            List<App.Models.SysSample> list = bal.GetListPager("",ref pager);
-            var json = new
+#if DEBUG
+            using (StackExchange.Profiling.MiniProfiler.StepStatic("查询数据SysSample的数据"))
             {
-                total = pager.totalRows,
-                rows = (from r in list
-                        select new App.Models.SysSample()
-                        {
+#endif
+                List<App.Models.SysSample> list = bal.GetListPager("", ref pager);
+                var json = new
+                {
+                    total = pager.totalRows,
+                    rows = (from r in list
+                            select new App.Models.SysSample()
+                            {
 
-                            Id = r.Id,
-                            Name = r.Name,
-                            Age = r.Age,
-                            Bir = r.Bir,
-                            Photo = r.Photo,
-                            Note = r.Note,
-                            CreateTime = r.CreateTime,
+                                Id = r.Id,
+                                Name = r.Name,
+                                Age = r.Age,
+                                Bir = r.Bir,
+                                Photo = r.Photo,
+                                Note = r.Note,
+                                CreateTime = r.CreateTime,
 
-                        }).ToArray()
-            };
-            return Json(json, JsonRequestBehavior.AllowGet);
+                            }).ToArray()
+                };
+                return Json(json, JsonRequestBehavior.AllowGet);
+#if DEBUG
+            }
+#endif
         }
 
     }
