@@ -36,6 +36,10 @@
     <StartupObject>Test.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
@@ -48,11 +52,25 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestBase.cs" />
+    <Compile Include="TestFiles\TestAbstactFactory.cs" />
+    <Compile Include="TestFiles\TestFactoryMethod.cs" />
+    <Compile Include="TestFiles\TestSingleton.cs" />
+    <Compile Include="TestFiles\TestVisitorPattern.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AbstractFactoryPattern\AbstractFactoryPattern.csproj">
+      <Project>{49bc7045-8cb2-4d68-97c7-bf2a4c9bf219}</Project>
+      <Name>AbstractFactoryPattern</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FactoryMethod\FactoryMethodPattern.csproj">
+      <Project>{a9d0b125-32e0-4bb2-b91b-13f04080841b}</Project>
+      <Name>FactoryMethodPattern</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Factory\Factory.csproj">
       <Project>{a27f367c-c9a2-4564-b954-20b16ef359cb}</Project>
       <Name>Factory</Name>
@@ -61,7 +79,12 @@
       <Project>{7ff581b7-fff1-4488-8e02-52a97131e49c}</Project>
       <Name>Singleton</Name>
     </ProjectReference>
+    <ProjectReference Include="..\VisitorPattern\VisitorPattern.csproj">
+      <Project>{9f1efb78-58fd-4326-a82f-4a2604ff78b5}</Project>
+      <Name>VisitorPattern</Name>
+    </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
