@@ -68,6 +68,7 @@ namespace Factory
         {
             try
             {
+                ///LoaderExceptions 异常，需要将加载的dll引用的dll拷贝到程序目录中
                 var assembly = Assembly.LoadFile(assemblyRef);
                 foreach (var type in assembly.GetTypes())
                 {

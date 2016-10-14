@@ -19,3 +19,5 @@ E:\study\RuanMei\Test\bin\Debug\VistorPattern.pdb
 E:\study\RuanMei\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
 E:\study\RuanMei\Test\obj\Debug\Test.exe
 E:\study\RuanMei\Test\obj\Debug\Test.pdb
+E:\study\RuanMei\Test\bin\Debug\DecoratorPattern.dll
+E:\study\RuanMei\Test\bin\Debug\DecoratorPattern.pdb

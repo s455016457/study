@@ -34,6 +34,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -45,12 +46,14 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestBase.cs" />
-    <Compile Include="TestCache.cs" />
-    <Compile Include="TestEmit.cs" />
-    <Compile Include="TestFactory.cs" />
-    <Compile Include="TestIOHelper.cs" />
-    <Compile Include="TestSingleon.cs" />
-    <Compile Include="TestSpeech.cs" />
+    <Compile Include="TestFiles\TestCache.cs" />
+    <Compile Include="TestFiles\TestDecoratorPattern.cs" />
+    <Compile Include="TestFiles\TestEmit.cs" />
+    <Compile Include="TestFiles\TestFactory.cs" />
+    <Compile Include="TestFiles\TestIOHelper.cs" />
+    <Compile Include="TestFiles\TestSingleon.cs" />
+    <Compile Include="TestFiles\TestSpeech.cs" />
+    <Compile Include="TestFiles\TestVerifyCode.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -63,6 +66,10 @@
     <ProjectReference Include="..\Common\Common.csproj">
       <Project>{18345817-d514-46f2-ad1b-c80a6b7f92b4}</Project>
       <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DecoratorPattern\DecoratorPattern.csproj">
+      <Project>{6bf9bf07-e0a0-4ea5-b227-050af34388ec}</Project>
+      <Name>DecoratorPattern</Name>
     </ProjectReference>
     <ProjectReference Include="..\Factory\Factory.csproj">
       <Project>{a27f367c-c9a2-4564-b954-20b16ef359cb}</Project>

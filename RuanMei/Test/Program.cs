@@ -41,6 +41,15 @@ namespace Test
             test.Test();
             Console.WriteLine("**************End测试IOHelper**************");
 
+            Console.WriteLine("**************Begin测试TestDecoratorPattern**************");
+            test = ObjectFactory.CreatedObject<TestDecoratorPattern>();
+            test.Test();
+            Console.WriteLine("**************End测试TestDecoratorPattern**************");
+
+            Console.WriteLine("**************Begin测试TestVerifyCode**************");
+            test = ObjectFactory.CreatedObject<TestVerifyCode>();
+            test.Test();
+            Console.WriteLine("**************End测试TestVerifyCode**************");
 
             Console.Read();
         }
