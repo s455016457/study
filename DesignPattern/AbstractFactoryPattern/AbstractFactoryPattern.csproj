@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7FF581B7-FFF1-4488-8E02-52A97131E49C}</ProjectGuid>
+    <ProjectGuid>{49BC7045-8CB2-4D68-97C7-BF2A4C9BF219}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Singleton</RootNamespace>
-    <AssemblyName>Singleton</AssemblyName>
+    <RootNamespace>AbstractFactoryPattern</RootNamespace>
+    <AssemblyName>AbstractFactoryPattern</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -39,10 +39,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="SingletonOne.cs" />
+    <Compile Include="Factory\BaseFactory.cs" />
+    <Compile Include="Factory\WarFactory.cs" />
+    <Compile Include="Factory\ZhenSanFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SingletonThree.cs" />
-    <Compile Include="SingletonTwo.cs" />
+    <Compile Include="War\Human.cs" />
+    <Compile Include="IRace.cs" />
+    <Compile Include="War\NE.cs" />
+    <Compile Include="War\Orc.cs" />
+    <Compile Include="ZhenSan\Qun.cs" />
+    <Compile Include="ZhenSan\Shu.cs" />
+    <Compile Include="War\Undead.cs" />
+    <Compile Include="ZhenSan\Wei.cs" />
+    <Compile Include="ZhenSan\Wu.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="ReadMe.txt">

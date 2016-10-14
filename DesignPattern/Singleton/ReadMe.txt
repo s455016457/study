@@ -1,0 +1,4 @@
+﻿单例模式
+SingletonOne 线程锁+双重判断实现单例模式
+SingletonTwo 静态属性实现单例模式
+SingletonOne 静态构造函数实现单例模式

@@ -24,7 +24,7 @@ namespace Test
                     Console.WriteLine(p);
                 });
             }
-            Thread.Sleep(500);
+            Thread.Sleep(100);
             Console.WriteLine("");
             {
                 Console.WriteLine("======================Begin测试VisitorPattern======================");
@@ -35,7 +35,7 @@ namespace Test
                     Console.WriteLine(p);
                 });
             }
-            Thread.Sleep(500);
+            Thread.Sleep(100);
             Console.WriteLine("");
             {
                 Console.WriteLine("======================Begin测试FactoryMethod======================");
@@ -46,7 +46,7 @@ namespace Test
                     Console.WriteLine(p);
                 });
             }
-            Thread.Sleep(500);
+            Thread.Sleep(100);
             Console.WriteLine("");
             {
                 Console.WriteLine("======================Begin测试AbstactFactory======================");
@@ -54,6 +54,28 @@ namespace Test
                 test.Test(p =>
                 {
                     Console.WriteLine("======================End测试AbstactFactory======================");
+                    Console.WriteLine(p);
+                });
+            }
+            Thread.Sleep(100);
+            Console.WriteLine("");
+            {
+                Console.WriteLine("======================Begin测试Adapter======================");
+                TestBase test = ObjectFactory.CreatedObject<TestAdapter>();
+                test.Test(p =>
+                {
+                    Console.WriteLine("======================End测试Adapter======================");
+                    Console.WriteLine(p);
+                });
+            }
+            Thread.Sleep(100);
+            Console.WriteLine("");
+            {
+                Console.WriteLine("======================Begin测试Bridge======================");
+                TestBase test = ObjectFactory.CreatedObject<TestBridge>();
+                test.Test(p =>
+                {
+                    Console.WriteLine("======================End测试Bridge======================");
                     Console.WriteLine(p);
                 });
             }
