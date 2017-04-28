@@ -41,8 +41,8 @@ config.SetDocumentationProvider(new XmlDocumentationProvider(HttpContext.Current
 ==============================log4net==============================
 log4net 日志记录
 1、在Nuget中引入log4net组件
-2、配置log4net.config文件
-如：
+2、需在WEBAPI、MVC、WEBFORM程序中加入log4.netConfig配置
+配置内容：
 <?xml version="1.0" encoding="utf-8"?>
 <configuration>
   <configSections>
@@ -51,9 +51,9 @@ log4net 日志记录
 
   <log4net>
     <!--定义输出到文件中-->
-    <appender name="OpenServiceAppender" type="log4net.Appender.RollingFileAppender">
+    <appender name="LoggerServiceAppender" type="log4net.Appender.RollingFileAppender">
       <!--输出日志文件的路径-->
-      <file value="App_Data\Logs\openservice.log" />
+      <file value="App_Data\Logs\ApplicationLogger.log" />
       <!--输出日志时自动向后追加-->
       <appendToFile value="true" />
       <!--防止多线程时不能写Log,官方说线程非安全-->
@@ -76,16 +76,17 @@ log4net 日志记录
       </layout>
     </appender>
 
-    <logger name="OpenService">
+    <logger name="ApplicationLogger">
       <level value="ALL"/>
       <appender-ref ref="Info" />
-      <appender-ref ref="OpenServiceAppender" />
+      <appender-ref ref="LoggerServiceAppender" />
     </logger>
 
   </log4net>
 </configuration>
 3、获得Log对象：
-log4net.ILog log = log4net.LogManager.GetLogger("OpenService");
+LoggerService.LoggerService.Start();//第一次启动时执行
+LoggerService.LoggerService.ApplicationLogger
 
 
 ==============================Unity==============================

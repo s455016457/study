@@ -290,6 +290,7 @@
     </Content>
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\TestClientReferences.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\TestClientDialogs.cshtml" />
+    <Content Include="log4net.config" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -338,6 +339,10 @@
     <ProjectReference Include="..\IService\IService.csproj">
       <Project>{64d3174d-4290-40c5-8dc7-82c47db9ba5f}</Project>
       <Name>IService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LogService\LoggerService.csproj">
+      <Project>{e739bef1-2020-4fae-a048-76e0821279dd}</Project>
+      <Name>LoggerService</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

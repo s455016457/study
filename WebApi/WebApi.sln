@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi", "WebApi\WebApi.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityService", "UnityService\UnityService.csproj", "{619D9A3B-E32D-40BD-8765-48410FC743BF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoggerService", "LogService\LoggerService.csproj", "{E739BEF1-2020-4FAE-A048-76E0821279DD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,10 @@ Global
 		{619D9A3B-E32D-40BD-8765-48410FC743BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{619D9A3B-E32D-40BD-8765-48410FC743BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{619D9A3B-E32D-40BD-8765-48410FC743BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E739BEF1-2020-4FAE-A048-76E0821279DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E739BEF1-2020-4FAE-A048-76E0821279DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E739BEF1-2020-4FAE-A048-76E0821279DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E739BEF1-2020-4FAE-A048-76E0821279DD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

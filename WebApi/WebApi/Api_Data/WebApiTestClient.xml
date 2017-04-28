@@ -518,5 +518,20 @@
             </summary>
             <param name="id">ID</param>
         </member>
+        <member name="T:WebApi.WebApiApplication">
+            <summary>
+            程序入口
+            </summary>
+        </member>
+        <member name="M:WebApi.WebApiApplication.Application_Start">
+            <summary>
+            程序入库
+            </summary>
+        </member>
+        <member name="M:WebApi.WebApiApplication.StartApplicationService">
+            <summary>
+            开启应用程序服务
+            </summary>
+        </member>
     </members>
 </doc>
