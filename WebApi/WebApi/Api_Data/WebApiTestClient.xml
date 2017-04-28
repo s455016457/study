@@ -4,6 +4,11 @@
         <name>WebApi</name>
     </assembly>
     <members>
+        <member name="T:WebApi.WebApiConfig">
+            <summary>
+            WebApi配置
+            </summary>
+        </member>
         <member name="M:WebApi.Areas.HelpPage.ApiDescriptionExtensions.GetFriendlyId(System.Web.Http.Description.ApiDescription)">
             <summary>
             Generates an URI-friendly ID for the <see cref="T:System.Web.Http.Description.ApiDescription"/>. E.g. "Get-Values-id_name" instead of "GetValues/{id}?name={name}"
@@ -481,6 +486,57 @@
             </summary>
             <param name="documentPath">The physical path to XML document.</param>
         </member>
+        <member name="T:WebApi.Controllers.Purchase.Po.SearchPoController">
+            <summary>
+            获取订单列表
+            </summary>
+        </member>
+        <member name="M:WebApi.Controllers.Purchase.Po.SearchPoController.Get(System.String,System.String,System.String,System.String)">
+            <summary>
+            获取订单列表
+            </summary>
+            <param name="beginDate">开始日期</param>
+            <param name="endDate">结束日期</param>
+            <param name="poNum">订单号</param>
+            <param name="buyer">采购员</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Controllers.Purchase.Po.SearchPoController.Post(WebApi.Controllers.Purchase.Po.SearchPoController.Paramater)">
+            <summary>
+            获取订单列表，分页
+            </summary>
+            <param name="paramater"></param>
+        </member>
+        <member name="T:WebApi.Controllers.Purchase.Po.SearchPoController.Paramater">
+            <summary>
+            查询参数
+            </summary>
+        </member>
+        <member name="P:WebApi.Controllers.Purchase.Po.SearchPoController.Paramater.beginDate">
+            <summary>
+            开始日期
+            </summary>
+        </member>
+        <member name="P:WebApi.Controllers.Purchase.Po.SearchPoController.Paramater.endDate">
+            <summary>
+            结束日期
+            </summary>
+        </member>
+        <member name="P:WebApi.Controllers.Purchase.Po.SearchPoController.Paramater.poNum">
+            <summary>
+            订单号
+            </summary>
+        </member>
+        <member name="P:WebApi.Controllers.Purchase.Po.SearchPoController.Paramater.buyer">
+            <summary>
+            采购员
+            </summary>
+        </member>
+        <member name="P:WebApi.Controllers.Purchase.Po.SearchPoController.Paramater.pager">
+            <summary>
+            分页
+            </summary>
+        </member>
         <member name="T:WebApi.Controllers.ValuesController">
             <summary>
             值API
@@ -531,6 +587,51 @@
         <member name="M:WebApi.WebApiApplication.StartApplicationService">
             <summary>
             开启应用程序服务
+            </summary>
+        </member>
+        <member name="T:WebApi.Models.GridPager">
+            <summary>
+            分页类
+            </summary>
+        </member>
+        <member name="P:WebApi.Models.GridPager.rows">
+            <summary>
+            每页行数
+            </summary>
+        </member>
+        <member name="P:WebApi.Models.GridPager.page">
+            <summary>
+            当前页是第几页
+            </summary>
+        </member>
+        <member name="P:WebApi.Models.GridPager.order">
+            <summary>
+            排序方式
+            </summary>
+        </member>
+        <member name="P:WebApi.Models.GridPager.sort">
+            <summary>
+            排序列
+            </summary>
+        </member>
+        <member name="P:WebApi.Models.GridPager.totalRows">
+            <summary>
+            总行数
+            </summary>
+        </member>
+        <member name="P:WebApi.Models.GridPager.totalPages">
+            <summary>
+            总页数
+            </summary>
+        </member>
+        <member name="P:WebApi.Models.Sort.sort">
+            <summary>
+            排序列
+            </summary>
+        </member>
+        <member name="P:WebApi.Models.Sort.order">
+            <summary>
+            排序方式
             </summary>
         </member>
     </members>

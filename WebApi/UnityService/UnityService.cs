@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using IBusiness.Interface;
 
 namespace UnityService
 {
@@ -32,7 +33,8 @@ namespace UnityService
 
         public static void RegisterType()
         {
-
+            _unity.RegisterType<IBusiness.Interface.Purchase.IPoBusiness, Business.Purchase.PoBusiness>();
+            _unity.RegisterType<IService.Interface.Purchase.IPOService, Service.Purchase.PoService>();
         }
     }
 }
