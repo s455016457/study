@@ -4,10 +4,27 @@
         <name>WebApi</name>
     </assembly>
     <members>
+        <member name="T:WebApi.RouteConfig">
+            <summary>
+            MVC路由器
+            </summary>
+        </member>
+        <member name="M:WebApi.RouteConfig.RegisterRoutes(System.Web.Routing.RouteCollection)">
+            <summary>
+            注册路由器
+            </summary>
+            <param name="routes"></param>
+        </member>
         <member name="T:WebApi.WebApiConfig">
             <summary>
             WebApi配置
             </summary>
+        </member>
+        <member name="M:WebApi.WebApiConfig.Register(System.Web.Http.HttpConfiguration)">
+            <summary>
+            注册配置
+            </summary>
+            <param name="config"></param>
         </member>
         <member name="M:WebApi.Areas.HelpPage.ApiDescriptionExtensions.GetFriendlyId(System.Web.Http.Description.ApiDescription)">
             <summary>
@@ -486,53 +503,89 @@
             </summary>
             <param name="documentPath">The physical path to XML document.</param>
         </member>
-        <member name="T:WebApi.Controllers.Purchase.Po.SearchPoController">
+        <member name="T:WebApi.Controllers.Purchase.PoController">
             <summary>
             获取订单列表
             </summary>
         </member>
-        <member name="M:WebApi.Controllers.Purchase.Po.SearchPoController.Get(System.String,System.String,System.String,System.String)">
-            <summary>
-            获取订单列表
-            </summary>
-            <param name="beginDate">开始日期</param>
-            <param name="endDate">结束日期</param>
-            <param name="poNum">订单号</param>
-            <param name="buyer">采购员</param>
-            <returns></returns>
-        </member>
-        <member name="M:WebApi.Controllers.Purchase.Po.SearchPoController.Post(WebApi.Controllers.Purchase.Po.SearchPoController.Paramater)">
+        <member name="M:WebApi.Controllers.Purchase.PoController.Search(WebApi.Controllers.Purchase.PoController.Paramater)">
             <summary>
             获取订单列表，分页
             </summary>
-            <param name="paramater"></param>
+            <param name="paramater">传入参数</param>
         </member>
-        <member name="T:WebApi.Controllers.Purchase.Po.SearchPoController.Paramater">
+        <member name="M:WebApi.Controllers.Purchase.PoController.GetModel(System.String)">
+            <summary>
+            获取订单
+            </summary>
+            <param name="PoNum">订单编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Controllers.Purchase.PoController.GetModelByPoNum(System.String)">
+            <summary>
+            获取订单,Restful风格的WebApi服务
+            </summary>
+            <param name="PoNum">订单编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Controllers.Purchase.PoController.GetDetailModel(System.String,System.String,System.String)">
+            <summary>
+            获取订单明细
+            </summary>
+            <param name="PoNum">订单编号</param>
+            <param name="ItemNum">物料编码</param>
+            <param name="Lot">批次</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Controllers.Purchase.PoController.GetModelDetails(System.String)">
+            <summary>
+            获取订单明细列表,Restful风格的WebApi服务
+            </summary>
+            <param name="PoNum">订单编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Controllers.Purchase.PoController.GetDetailModel2(System.String,System.String,System.String)">
+            <summary>
+            获取订单明细,Restful风格的WebApi服务
+            </summary>
+            <param name="PoNum">订单编号</param>
+            <param name="ItemNum">物料编码</param>
+            <param name="Lot">批次</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Controllers.Purchase.PoController.PostGetModel(System.String)">
+            <summary>
+            获取订单
+            </summary>
+            <param name="PoNum">订单编号</param>
+            <returns></returns>
+        </member>
+        <member name="T:WebApi.Controllers.Purchase.PoController.Paramater">
             <summary>
             查询参数
             </summary>
         </member>
-        <member name="P:WebApi.Controllers.Purchase.Po.SearchPoController.Paramater.beginDate">
+        <member name="P:WebApi.Controllers.Purchase.PoController.Paramater.beginDate">
             <summary>
             开始日期
             </summary>
         </member>
-        <member name="P:WebApi.Controllers.Purchase.Po.SearchPoController.Paramater.endDate">
+        <member name="P:WebApi.Controllers.Purchase.PoController.Paramater.endDate">
             <summary>
             结束日期
             </summary>
         </member>
-        <member name="P:WebApi.Controllers.Purchase.Po.SearchPoController.Paramater.poNum">
+        <member name="P:WebApi.Controllers.Purchase.PoController.Paramater.poNum">
             <summary>
             订单号
             </summary>
         </member>
-        <member name="P:WebApi.Controllers.Purchase.Po.SearchPoController.Paramater.buyer">
+        <member name="P:WebApi.Controllers.Purchase.PoController.Paramater.buyer">
             <summary>
             采购员
             </summary>
         </member>
-        <member name="P:WebApi.Controllers.Purchase.Po.SearchPoController.Paramater.pager">
+        <member name="P:WebApi.Controllers.Purchase.PoController.Paramater.pager">
             <summary>
             分页
             </summary>

@@ -22,7 +22,7 @@ namespace WebApi
             //启动数据库上下文服务
             SqlServerContextService.Start();
             // Web API 路由
-            config.MapHttpAttributeRoutes();
+            config.MapHttpAttributeRoutes();//开启特性路由
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
