@@ -21,3 +21,5 @@ E:\study\RuanMei\Test\obj\Debug\Test.exe
 E:\study\RuanMei\Test\obj\Debug\Test.pdb
 E:\study\RuanMei\Test\bin\Debug\DecoratorPattern.dll
 E:\study\RuanMei\Test\bin\Debug\DecoratorPattern.pdb
+E:\study\RuanMei\Test\bin\Debug\MementoPattern.dll
+E:\study\RuanMei\Test\bin\Debug\MementoPattern.pdb

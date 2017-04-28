@@ -40,3 +40,6 @@ Debug
 /DesignPattern/packages/Newtonsoft.Json.9.0.1/lib/net20
 /DesignPattern/packages/Newtonsoft.Json.9.0.1
 /RuanMei/packages/Newtonsoft.Json.4.5.11/lib/net35
+
+/WebApi/packages
+/WebApi/WebApi/bin

@@ -13,7 +13,7 @@ namespace Test
         {
             Console.WriteLine("**************Begin测试SpeechSynthesizerHepler**************");
             TestBase test = ObjectFactory.CreatedObject<TestSpeech>();
-            //test.Test();
+            test.Test();
             Console.WriteLine("**************End测试SpeechSynthesizerHepler**************");
 
             Console.WriteLine("**************Begin测试Singleton**************");
@@ -23,12 +23,12 @@ namespace Test
 
             Console.WriteLine("**************Begin测试Cache**************");
             test = ObjectFactory.CreatedObject<TestCache>();
-            //test.Test();
+            test.Test();
             Console.WriteLine("**************End测试Cache**************");
 
             Console.WriteLine("**************Begin测试Emit**************");
             test = ObjectFactory.CreatedObject<TestEmit>();
-            //test.Test();
+            test.Test();
             Console.WriteLine("**************End测试Cache**************");
 
             Console.WriteLine("**************Begin测试IOHelper**************");
@@ -50,6 +50,11 @@ namespace Test
             test = ObjectFactory.CreatedObject<TestVerifyCode>();
             test.Test();
             Console.WriteLine("**************End测试TestVerifyCode**************");
+
+            Console.WriteLine("**************Begin测试TestMementoPatter**************");
+            test = ObjectFactory.CreatedObject<TestMementoPatter>();
+            test.Test();
+            Console.WriteLine("**************End测试TestMementoPatter**************");
 
             Console.Read();
         }

@@ -51,6 +51,7 @@
     <Compile Include="TestFiles\TestEmit.cs" />
     <Compile Include="TestFiles\TestFactory.cs" />
     <Compile Include="TestFiles\TestIOHelper.cs" />
+    <Compile Include="TestFiles\TestMementoPatter.cs" />
     <Compile Include="TestFiles\TestSingleon.cs" />
     <Compile Include="TestFiles\TestSpeech.cs" />
     <Compile Include="TestFiles\TestVerifyCode.cs" />
@@ -74,6 +75,10 @@
     <ProjectReference Include="..\Factory\Factory.csproj">
       <Project>{a27f367c-c9a2-4564-b954-20b16ef359cb}</Project>
       <Name>Factory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MementoPattern\MementoPattern.csproj">
+      <Project>{d5d7df8f-8725-4209-990d-9f6923f76025}</Project>
+      <Name>MementoPattern</Name>
     </ProjectReference>
     <ProjectReference Include="..\Miscellaneous\Miscellaneous.csproj">
       <Project>{5199af38-28d0-4454-895e-9411260f0471}</Project>

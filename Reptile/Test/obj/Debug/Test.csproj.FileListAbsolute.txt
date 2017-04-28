@@ -1,1 +1,2 @@
 H:\MyProjects\study\Reptile\Test\bin\Debug\Test.exe.config
+E:\study\Reptile\Test\bin\Debug\Test.exe.config
