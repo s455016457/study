@@ -39,7 +39,7 @@ namespace IService.Common
         {
             if (!_isStart)
             {
-                throw new Exception("数据库上下文服务为启动，获取上下文失败！");
+                throw new Exception("数据库上下文服务未启动，获取上下文失败！");
             }
 
             return _context;

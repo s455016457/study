@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26403.3
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi.测试", "WebApi.测试\WebApi.测试.csproj", "{CD35EA33-56D7-4183-BEE0-EAF40A912C38}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IService", "IService\IService.csproj", "{64D3174D-4290-40C5-8DC7-82C47DB9BA5F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service", "Service\Service.csproj", "{65682A10-831E-48A9-8F86-4E162EE150B7}"
@@ -21,16 +19,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityService", "UnityServic
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoggerService", "LogService\LoggerService.csproj", "{E739BEF1-2020-4FAE-A048-76E0821279DD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi.测试", "WebApi.测试\WebApi.测试.csproj", "{CD35EA33-56D7-4183-BEE0-EAF40A912C38}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{CD35EA33-56D7-4183-BEE0-EAF40A912C38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CD35EA33-56D7-4183-BEE0-EAF40A912C38}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CD35EA33-56D7-4183-BEE0-EAF40A912C38}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CD35EA33-56D7-4183-BEE0-EAF40A912C38}.Release|Any CPU.Build.0 = Release|Any CPU
 		{64D3174D-4290-40C5-8DC7-82C47DB9BA5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{64D3174D-4290-40C5-8DC7-82C47DB9BA5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{64D3174D-4290-40C5-8DC7-82C47DB9BA5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -63,6 +59,10 @@ Global
 		{E739BEF1-2020-4FAE-A048-76E0821279DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E739BEF1-2020-4FAE-A048-76E0821279DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E739BEF1-2020-4FAE-A048-76E0821279DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD35EA33-56D7-4183-BEE0-EAF40A912C38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD35EA33-56D7-4183-BEE0-EAF40A912C38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD35EA33-56D7-4183-BEE0-EAF40A912C38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD35EA33-56D7-4183-BEE0-EAF40A912C38}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

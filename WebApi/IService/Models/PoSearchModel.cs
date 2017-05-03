@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace IService.Models
 {
     public class PoSearchModel
     {
+
         public string PONUM { get; set; }
         public System.DateTime IDATE { get; set; }
         public string POTYPE { get; set; }
@@ -26,7 +23,6 @@ namespace IService.Models
         public Decimal AMOUNT { get; set; }
         public Boolean CLOSED { get; set; }
         public DateTime CREATED { get; set; }
-        public string CREATEDBY { get; set; }
         public string WFSTATUS { get; set; }
         public string ISPRINTED { get; set; }
         public string OBJTYPE { get; set; }

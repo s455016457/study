@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
 using IService.Common;
+using WebApi.App_Start;
 
 namespace WebApi
 {
@@ -29,6 +30,8 @@ namespace WebApi
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+            config.Filters.Add(new ExceptionFilterAttibute());//注册全局异常筛选器
         }
     }
 }

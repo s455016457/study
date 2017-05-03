@@ -1,4 +1,6 @@
-﻿using System;
+﻿using StackExchange.Profiling;
+using StackExchange.Profiling.EntityFramework6;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -19,11 +21,13 @@ namespace WebApi
         /// </summary>
         protected void Application_Start()
         {
+            MiniProfilerEF6.Initialize();
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            UnityConfig.RegisterComponents();
             StartApplicationService();
         }
 
@@ -34,6 +38,20 @@ namespace WebApi
         {
             LoggerService.LoggerService.Start();
             LoggerService.LoggerService.ApplicationLogger.Debug("日志服务开启成功！");
+        }
+
+        protected void Application_BeginRequest()
+        {
+            if (Request.IsLocal)//这里是允许本地访问启动监控,可不写
+            {
+                MiniProfiler.Start();
+
+            }
+        }
+
+        protected void Application_EndRequest()
+        {
+            MiniProfiler.Stop();
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using IService.Interface.Purchase;
+using Microsoft.Practices.Unity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -14,14 +16,26 @@ namespace WebApi.Controllers.Purchase
     public class PoController : ApiController
     {
         /// <summary>
+        /// 
+        /// </summary>
+        [Dependency]
+        public IPOService _poService { get; set; }
+        /// <summary>
+        /// 初始化
+        /// </summary>
+        public PoController() : base()
+        {
+            LoggerService.LoggerService.ApplicationLogger.Debug("PoController无参数构造函数初始化！");
+        }
+        /// <summary>
         /// 获取订单列表，分页
         /// </summary>
         /// <param name="paramater">传入参数</param>
         [Route("Search")]//特性路由
         [HttpPost]
-        public String Search([FromBody]PoController.Paramater paramater)
+        public IList<IService.Models.PoSearchModel> Search([FromBody]PoController.Paramater paramater)
         {
-            return "Values";
+            return _poService.GetList();
         }
         
         /// <summary>

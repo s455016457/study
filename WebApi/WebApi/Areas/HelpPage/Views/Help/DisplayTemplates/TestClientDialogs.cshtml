@@ -1,5 +1,6 @@
 @using System.Web.Http
 @using WebApi.Areas.HelpPage.Models
+@using StackExchange.Profiling;
 @model HelpPageApiModel
 
 @{
@@ -66,6 +67,7 @@
   </div>
 </div>
 
+@MiniProfiler.RenderIncludes();
 <script>
   testClientModel = {
     HttpMethod: '@Model.ApiDescription.HttpMethod',

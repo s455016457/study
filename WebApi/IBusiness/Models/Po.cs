@@ -1,11 +1,13 @@
-﻿using System;
+﻿using IBusiness.Attribute;
+using System;
 using System.Linq;
 
 namespace IBusiness.Models
 {
     public class Po
     {
-        public string PONUM { get; set; }
+        [EntityMapping("PONUM")]
+        public string PoNum { get; set; }
         public System.DateTime IDATE { get; set; }
         public string POTYPE { get; set; }
         public string REV { get; set; }
@@ -37,7 +39,7 @@ namespace IBusiness.Models
         public string MISCHRGTIT { get; set; }
         public string MISCACC { get; set; }
         public Nullable<decimal> TOTALQTY { get; set; }
-        public String BuyerName { get; set; }
+        public String BuyerDescr { get; set; }
         public String InvTypeDescr { get; set; }
         public String PayMethodDescr { get; set; }
         public String PayTermDescr { get; set; }

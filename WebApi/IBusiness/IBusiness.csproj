@@ -59,6 +59,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attribute\EntityMappingAttribute.cs" />
     <Compile Include="Interface\IDoubleTableBaseBusiness.cs" />
     <Compile Include="Interface\Purchase\IPoBusiness.cs" />
     <Compile Include="Interface\ISingleTableBaseBusiness.cs" />

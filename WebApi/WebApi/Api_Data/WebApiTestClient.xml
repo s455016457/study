@@ -4,6 +4,59 @@
         <name>WebApi</name>
     </assembly>
     <members>
+        <member name="T:WebApi.App_Start.ExceptionFilterAttibute">
+            <summary>
+            异常筛选器特性
+            </summary>
+        </member>
+        <member name="M:WebApi.App_Start.ExceptionFilterAttibute.OnException(System.Web.Http.Filters.HttpActionExecutedContext)">
+            <summary>
+            引发异常事件
+            </summary>
+            <param name="actionExecutedContext"></param>
+        </member>
+        <member name="M:WebApi.App_Start.ExceptionFilterAttibute.GetExceptionMessage(System.Exception)">
+            <summary>
+            Gets the exception message.
+            </summary>
+            <param name="ex">The ex.</param>
+            <returns>String.</returns>
+        </member>
+        <member name="M:WebApi.App_Start.ExceptionFilterAttibute.GetExceptionMessage(System.Text.StringBuilder,System.Exception)">
+            <summary>
+            获取异常的消息
+            </summary>
+            <param name="sb"></param>
+            <param name="ex"></param>
+        </member>
+        <member name="M:WebApi.App_Start.ExceptionFilterAttibute.BuildQuery(System.Net.Http.HttpRequestMessage)">
+            <summary>
+            组装普通文本请求参数。
+            </summary>
+            <param name="request">Key-Value形式请求参数字典</param>
+            <returns>URL编码后的请求数据</returns>
+        </member>
+        <member name="M:WebApi.App_Start.ExceptionFilterAttibute.LogRequest(System.Net.Http.HttpRequestMessage,System.Boolean,System.String)">
+            <summary>
+            记录请求
+            </summary>
+            <param name="request"></param>
+            <param name="success"></param>
+            <param name="message"></param>
+        </member>
+        <member name="M:WebApi.App_Start.ExceptionFilterAttibute.GetHostAddress">
+            <summary>
+            获取客户端IP地址（无视代理）
+            </summary>
+            <returns>若失败则返回回送地址</returns>
+        </member>
+        <member name="M:WebApi.App_Start.ExceptionFilterAttibute.IsIP(System.String)">
+            <summary>
+            检查IP地址格式
+            </summary>
+            <param name="ip"></param>
+            <returns></returns>
+        </member>
         <member name="T:WebApi.RouteConfig">
             <summary>
             MVC路由器
@@ -14,6 +67,16 @@
             注册路由器
             </summary>
             <param name="routes"></param>
+        </member>
+        <member name="T:WebApi.UnityConfig">
+            <summary>
+            Unity.WebApi配置
+            </summary>
+        </member>
+        <member name="M:WebApi.UnityConfig.RegisterComponents">
+            <summary>
+            注册组件
+            </summary>
         </member>
         <member name="T:WebApi.WebApiConfig">
             <summary>
@@ -508,6 +571,16 @@
             获取订单列表
             </summary>
         </member>
+        <member name="P:WebApi.Controllers.Purchase.PoController._poService">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:WebApi.Controllers.Purchase.PoController.#ctor">
+            <summary>
+            初始化
+            </summary>
+        </member>
         <member name="M:WebApi.Controllers.Purchase.PoController.Search(WebApi.Controllers.Purchase.PoController.Paramater)">
             <summary>
             获取订单列表，分页
@@ -626,6 +699,58 @@
             Delete请求，根据Id删除值
             </summary>
             <param name="id">ID</param>
+        </member>
+        <member name="T:WebApi.Extend.HttpRequestMessageExtend">
+            <summary>
+            HttpRequestMessage扩展
+            </summary>
+        </member>
+        <member name="M:WebApi.Extend.HttpRequestMessageExtend.GetClientIpAddress(System.Net.Http.HttpRequestMessage)">
+            <summary>
+            获取IP地址
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Extend.HttpRequestMessageExtend.GetQueryStrings(System.Net.Http.HttpRequestMessage)">
+            <summary>
+            获取所有键值
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Extend.HttpRequestMessageExtend.GetQueryString(System.Net.Http.HttpRequestMessage,System.String)">
+            <summary>
+            获取单个键值
+            </summary>
+            <param name="request"></param>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:WebApi.Extend.HttpRequestMessageExtend.GetHeader(System.Net.Http.HttpRequestMessage,System.String)" -->
+        <member name="M:WebApi.Extend.HttpRequestMessageExtend.GetCookie(System.Net.Http.HttpRequestMessage,System.String)">
+            <summary>
+            获取Cookie
+            </summary>
+            <param name="request"></param>
+            <param name="cookieName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Extend.HttpRequestMessageExtend.GetCookie(System.String,System.String)">
+            <summary>
+            获取Cookie
+            </summary>
+            <param name="strCookie">Cookie字符串</param>
+            <param name="cookieName">Cookie名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Extend.HttpRequestMessageExtend.GetCookieHeaderValue(System.Net.Http.HttpRequestMessage,System.String)">
+            <summary>
+            获取Cookie
+            </summary>
+            <param name="request"></param>
+            <param name="cookieName"></param>
+            <returns></returns>
         </member>
         <member name="T:WebApi.WebApiApplication">
             <summary>
