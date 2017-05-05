@@ -20,8 +20,8 @@ namespace WebApi
         {
             // Web API 配置和服务
 
-            //启动数据库上下文服务
-            SqlServerContextService.Start();
+            ////启动数据库上下文服务
+            //SqlServerContextService.Start();
             // Web API 路由
             config.MapHttpAttributeRoutes();//开启特性路由
 

@@ -11,7 +11,7 @@ namespace IService.Common
     /// </summary>
     public static class SqlServerContextService
     {
-        private static DAO.swerpEntities _context;
+        private static DAO.EF.swerpEntities _context;
         static object lock_obj = new object();
         private static bool _isStart = false;
         private static bool _isStop = false;
@@ -27,7 +27,7 @@ namespace IService.Common
                 {
                     if (_context == null)
                     {
-                        _context = new DAO.swerpEntities();
+                        _context = new DAO.EF.swerpEntities();
                         _isStart = true;
                         _isStop = false;
                     }
@@ -35,7 +35,7 @@ namespace IService.Common
             }
         }
 
-        public static DAO.swerpEntities GetContext()
+        public static DAO.EF.swerpEntities GetContext()
         {
             if (!_isStart)
             {

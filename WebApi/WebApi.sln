@@ -7,11 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IService", "IService\IServi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service", "Service\Service.csproj", "{65682A10-831E-48A9-8F86-4E162EE150B7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IBusiness", "IBusiness\IBusiness.csproj", "{7D3619A9-44ED-40C3-80BB-BE6F22ED5977}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IInfrastructure", "IBusiness\IInfrastructure.csproj", "{7D3619A9-44ED-40C3-80BB-BE6F22ED5977}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business", "Business\Business.csproj", "{269A4A70-EEAF-4589-B6A3-48880A66EB78}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Business\Infrastructure.csproj", "{269A4A70-EEAF-4589-B6A3-48880A66EB78}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAO", "DAO\DAO.csproj", "{85EABA82-D9CC-40A9-8AC3-E721ACE16B06}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAO.EF", "DAO\DAO.EF.csproj", "{85EABA82-D9CC-40A9-8AC3-E721ACE16B06}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi", "WebApi\WebApi.csproj", "{1EF2E7E3-01E6-4EFC-9C54-C14E260ECECF}"
 EndProject
@@ -20,6 +20,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoggerService", "LogService\LoggerService.csproj", "{E739BEF1-2020-4FAE-A048-76E0821279DD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi.测试", "WebApi.测试\WebApi.测试.csproj", "{CD35EA33-56D7-4183-BEE0-EAF40A912C38}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAO2", "DAO2\DAO2.csproj", "{C312B1C6-F253-4B77-838A-86979122D360}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,10 @@ Global
 		{CD35EA33-56D7-4183-BEE0-EAF40A912C38}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CD35EA33-56D7-4183-BEE0-EAF40A912C38}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CD35EA33-56D7-4183-BEE0-EAF40A912C38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C312B1C6-F253-4B77-838A-86979122D360}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C312B1C6-F253-4B77-838A-86979122D360}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C312B1C6-F253-4B77-838A-86979122D360}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C312B1C6-F253-4B77-838A-86979122D360}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

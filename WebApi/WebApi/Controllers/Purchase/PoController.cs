@@ -1,4 +1,6 @@
-﻿using IService.Interface.Purchase;
+﻿using IInfrastructure.IRepositories.Purchase;
+using IInfrastructure.Models.Purchase;
+using IService.Interface.Purchase;
 using Microsoft.Practices.Unity;
 using System;
 using System.Collections.Generic;
@@ -21,6 +23,11 @@ namespace WebApi.Controllers.Purchase
         [Dependency]
         public IPOService _poService { get; set; }
         /// <summary>
+        /// 
+        /// </summary>
+        [Dependency]
+        public IPoRepository _poRepository { get; set; }
+        /// <summary>
         /// 初始化
         /// </summary>
         public PoController() : base()
@@ -33,9 +40,9 @@ namespace WebApi.Controllers.Purchase
         /// <param name="paramater">传入参数</param>
         [Route("Search")]//特性路由
         [HttpPost]
-        public IList<IService.Models.PoSearchModel> Search([FromBody]PoController.Paramater paramater)
+        public IList<Po> Search([FromBody]PoController.Paramater paramater)
         {
-            return _poService.GetList();
+            return _poRepository.GetList(p => p.CreatedUserName != null && p.CreatedUserName != "");
         }
         
         /// <summary>

@@ -66,13 +66,13 @@
     <Compile Include="Purchase\PoService.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DAO\DAO.csproj">
+    <ProjectReference Include="..\DAO\DAO.EF.csproj">
       <Project>{85eaba82-d9cc-40a9-8ac3-e721ace16b06}</Project>
-      <Name>DAO</Name>
+      <Name>DAO.EF</Name>
     </ProjectReference>
-    <ProjectReference Include="..\IBusiness\IBusiness.csproj">
+    <ProjectReference Include="..\IBusiness\IInfrastructure.csproj">
       <Project>{7d3619a9-44ed-40c3-80bb-be6f22ed5977}</Project>
-      <Name>IBusiness</Name>
+      <Name>IInfrastructure</Name>
     </ProjectReference>
     <ProjectReference Include="..\IService\IService.csproj">
       <Project>{64d3174d-4290-40c5-8dc7-82c47db9ba5f}</Project>

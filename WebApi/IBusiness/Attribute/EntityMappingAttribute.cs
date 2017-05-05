@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace IBusiness.Attribute
+namespace IInfrastructure.Attribute
 {
     public class EntityMappingAttribute:System.Attribute
     {

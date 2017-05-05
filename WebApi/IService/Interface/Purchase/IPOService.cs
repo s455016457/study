@@ -8,6 +8,5 @@ namespace IService.Interface.Purchase
 {
     public interface IPOService
     {
-        IList<Models.PoSearchModel> GetList();
     }
 }

@@ -576,6 +576,11 @@
             
             </summary>
         </member>
+        <member name="P:WebApi.Controllers.Purchase.PoController._poRepository">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="M:WebApi.Controllers.Purchase.PoController.#ctor">
             <summary>
             初始化

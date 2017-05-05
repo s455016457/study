@@ -358,6 +358,10 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\IBusiness\IInfrastructure.csproj">
+      <Project>{7d3619a9-44ed-40c3-80bb-be6f22ed5977}</Project>
+      <Name>IInfrastructure</Name>
+    </ProjectReference>
     <ProjectReference Include="..\IService\IService.csproj">
       <Project>{64d3174d-4290-40c5-8dc7-82c47db9ba5f}</Project>
       <Name>IService</Name>
@@ -370,6 +374,9 @@
       <Project>{619d9a3b-e32d-40bd-8765-48410fc743bf}</Project>
       <Name>UnityService</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

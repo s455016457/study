@@ -61,19 +61,20 @@
   <ItemGroup>
     <Compile Include="Common\SqlServerContextService.cs" />
     <Compile Include="Interface\Purchase\IPOService.cs" />
-    <Compile Include="Models\GridPager.cs" />
-    <Compile Include="Models\PoSearchModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DAO\DAO.csproj">
+    <ProjectReference Include="..\DAO\DAO.EF.csproj">
       <Project>{85eaba82-d9cc-40a9-8ac3-e721ace16b06}</Project>
-      <Name>DAO</Name>
+      <Name>DAO.EF</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
