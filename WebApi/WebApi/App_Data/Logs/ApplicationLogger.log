@@ -125,3 +125,9 @@ System.InvalidOperationException: Missing map from IInfrastructure.Models.Purcha
 2017-05-05 19:37:59,469 [20] DEBUG ApplicationLogger [(null)] - PoController无参数构造函数初始化！
 2017-05-05 19:37:59,755 [20] DEBUG ApplicationLogger [(null)] - PoServicey一个参数构造函数
 2017-05-05 19:38:00,144 [20] DEBUG ApplicationLogger [(null)] - 一个参数构造函数初始化PoRepository
+2017-05-09 15:16:06,143 [1] DEBUG ApplicationLogger [(null)] - 日志服务开启成功！
+2017-05-09 15:30:38,315 [1] DEBUG ApplicationLogger [(null)] - 日志服务开启成功！
+2017-05-09 15:31:47,518 [12] DEBUG ApplicationLogger [(null)] - PoController无参数构造函数初始化！
+2017-05-09 15:31:47,604 [12] DEBUG ApplicationLogger [(null)] - PoServicey一个参数构造函数
+2017-05-09 15:31:47,921 [12] DEBUG ApplicationLogger [(null)] - 一个参数构造函数初始化PoRepository
+2017-05-13 16:40:00,038 [1] DEBUG ApplicationLogger [(null)] - 日志服务开启成功！
